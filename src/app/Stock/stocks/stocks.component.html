@@ -1,7 +1,7 @@
 <h2>Каталог акций</h2>
 
 <div class="stocks">
-    @for (stock of stocks; track $index) {
+    @for (stock of stocks(); track $index) {
         <app-stock-item [stock]="stock"></app-stock-item>
     }
 </div>
