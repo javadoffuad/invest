@@ -1,5 +1,7 @@
-@if (stock) {
+@let stockItem = stock();
+
+@if (stockItem) {
     <div>
-        <p>{{stock.name}}</p>
+        <p>{{stockItem.name}}</p>
     </div>
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IStock } from '../models/stock.models';
 
 @Component({
@@ -9,5 +9,5 @@ import { IStock } from '../models/stock.models';
   styleUrl: './stock-item.component.less'
 })
 export class StockItemComponent {
-  @Input({required: true}) stock: IStock | null = null;
+  stock = input<IStock | null>(null);
 }
