@@ -1,6 +1,11 @@
-import { IActivitySector, IStock } from "../models/stock.models";
+import { Injectable } from '@angular/core';
+import {IStock} from '../models/stock.models';
 
-export const mockStocks: IStock[] = [
+@Injectable({
+  providedIn: 'root'
+})
+export class StocksService {
+  private stocks: IStock[] = [
     {
       id: 1,
       name: 'Норильский никель',
@@ -71,31 +76,15 @@ export const mockStocks: IStock[] = [
       price: '35,855',
       sectorId: 1,
     },
-];
+  ];
 
-export const mockActivitySectors: IActivitySector[] = [
-    {
-      id: 1,
-      name: 'Сырьевая промышленность'
-    },
-    {
-      id: 2,
-      name: 'Потребительские товары и услуги'
-    },
-    {
-      id: 3,
-      name: 'Недвижимость'
-    },
-    {
-      id: 4,
-      name: 'Информационные технологии'
-    },
-    {
-      id: 5,
-      name: 'Финансовый сектор'
-    },
-    {
-      id: 6,
-      name: 'Энергетика'
-    },
-];
+  constructor() { }
+
+  public getStocks() {
+    return this.stocks;
+  }
+
+  public getStock(stockShortName: IStock['shortName']): IStock | null {
+    return this.stocks.find(stock => stock.shortName === stockShortName) || null;
+  }
+}

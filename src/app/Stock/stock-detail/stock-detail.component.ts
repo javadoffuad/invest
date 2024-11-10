@@ -1,5 +1,7 @@
 import {Component, signal} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {StocksService} from '../services/stocks.service';
+import {IStock} from '../models/stock.models';
 
 @Component({
   selector: 'app-stock-detail',
@@ -10,12 +12,17 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class StockDetailComponent {
   protected stockShortName = signal<string>('');
+  protected stock = signal<IStock | null>(null);
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private stocksService: StocksService,
+  ) {}
 
   ngOnInit() {
     const stockShortName = this.route.snapshot.paramMap.get('name') ?? '';
     this.stockShortName.set(stockShortName);
-    console.log('stock shortName', stockShortName);
+    const stock = this.stocksService.getStock(stockShortName);
+    this.stock.set(stock);
   }
 }
