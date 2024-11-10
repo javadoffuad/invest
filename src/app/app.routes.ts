@@ -1,7 +1,13 @@
 import { Routes } from '@angular/router';
-import { StocksComponent } from './Stock/stocks/stocks.component';
 
-export const routes: Routes = [{
-    component: StocksComponent,
+export const routes: Routes = [
+  {
     path: '',
-}];
+    loadComponent: () => import('./Stock/stocks/stocks.component').then(c => c.StocksComponent)
+  },
+  {
+    path: 'stocks/:name',
+    loadComponent: () =>
+      import('./Stock/stock-detail/stock-detail.component').then(c => c.StockDetailComponent),
+  }
+];

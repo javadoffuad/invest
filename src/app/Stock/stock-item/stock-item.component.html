@@ -2,6 +2,6 @@
 
 @if (stockItem) {
     <div>
-        <p>{{stockItem.name}}</p>
+        <p [routerLink]="'stocks/' + stockItem.shortName">{{stockItem.name}}</p>
     </div>
 }
