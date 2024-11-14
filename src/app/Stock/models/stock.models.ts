@@ -3,8 +3,16 @@ export interface IStock {
   id: number;
   name: string;
   shortName: string;
-  price: string;
+  price: IPrice;
+  lotSize: number;
   sectorId: IActivitySector['id'];
+}
+
+export type Currency = 'USD' | 'RUB';
+
+export interface IPrice {
+  value: number;
+  currency: Currency;
 }
 
 export interface IActivitySector {

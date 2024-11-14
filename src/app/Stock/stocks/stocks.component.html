@@ -1,7 +1,34 @@
 <h2>Каталог акций</h2>
 
-<div class="stocks">
-    @for (stock of stocks(); track $index) {
-        <app-stock-item [stock]="stock"></app-stock-item>
-    }
-</div>
+<table mat-table [dataSource]="stocks()" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Название </th>
+    <td mat-cell *matCellDef="let element">
+      <p>{{element.name}}</p>
+      <p>{{element.shortName}}</p>
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Цена </th>
+    <td mat-cell *matCellDef="let element">
+      <p>{{element.price.value | currency : element.price.currency}}</p>
+      <p>1 лот = {{element.lotSize}} {{element.lotSize === 1 ? 'акция' : 'акций'}}</p>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

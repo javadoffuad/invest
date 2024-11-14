@@ -1,19 +1,22 @@
 import { Component, signal } from '@angular/core';
+import {MatTableModule} from '@angular/material/table';
 import { IActivitySector, IStock } from '../models/stock.models';
 import { StockItemComponent } from "../stock-item/stock-item.component";
 import {StocksService} from '../services/stocks.service';
 import {ActivitySectorsService} from '../services/activity-sectors.service';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-stocks',
   standalone: true,
-  imports: [StockItemComponent],
+  imports: [StockItemComponent, MatTableModule, CurrencyPipe],
   templateUrl: './stocks.component.html',
   styleUrl: './stocks.component.less'
 })
 export class StocksComponent {
   protected activitySectors = signal<IActivitySector[]>([]);
   protected stocks = signal<IStock[]>([]);
+  protected readonly displayedColumns: string[] = ['id', 'name', 'price'];
 
   constructor(
     private stocksService: StocksService,
