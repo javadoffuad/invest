@@ -1,46 +1,14 @@
 <style>
-  * {
-    font-family: Verdana;
-  }
   :host {
     display: flex;
+    padding: 30px;
   }
   .stock {
-    display: flex;
-    background-color: red;
     width: 720px;
-    color: #fff;
-    padding: 24px;
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 24px;
+    margin-right: 30px;
   }
-  .stock__info {
-    display: flex;
-    flex-grow: 1;
-    flex-flow: column;
-  }
-  .stock__name {
-    font-size: 28px;
-    font-weight: 700;
-  }
-  .stock__short-name {
-    font-size: 14px;
-    position: relative;
-    top: -12px;
-    margin-left: 5px;
-  }
-  .price-card {
-    background: #fff;
-    border: 1px solid #e7e8ea;
-    border-radius: 24px;
-    color: rgba(0, 0, 0, .54);
-    padding: 24px 20px 20px;
-    margin-left: 30px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  .stock__logo {
+    margin-right: 15px;
   }
   .price-card__date {
     color: rgba(0, 0, 0, .54);
@@ -49,7 +17,6 @@
     font-weight: 400;
   }
   .price-card__money {
-    color: #333;
     font-size: 28px;
     font-weight: 500;
   }
@@ -58,26 +25,44 @@
 @let stockItem = stock();
 
 @if (stockItem) {
-  <div class="stock">
-    <div class="stock__info">
-      <div class="stock__full-name">
-        <span class="stock__name">{{ stockItem.name }}</span>
-        <span class="stock__short-name">{{ stockItem.shortName }}</span>
-      </div>
-      <div class="stock__sector">
-        <p class="stock__sector-name">Доходность за полгода</p>
-        <p>−10,75%</p>
-      </div>
+  <div
+    class="stock"
+    tuiAppearance="floating"
+    tuiCardLarge
+  >
+    <header tuiHeader>
+      <tui-avatar
+        class="stock__logo"
+        appearance="primary"
+        size="xl"
+        [src]="stockItem.logoName"
+      />
+      <h1 tuiTitle>
+        {{ stockItem.name }}
+        <span tuiSubtitle>{{ stockItem.shortName }}</span>
+      </h1>
+    </header>
+    <div class="stock__sector">
+      <p class="stock__sector-name">Доходность за полгода</p>
+      <p>−10,75%</p>
     </div>
-    <div class="stock__logo">img</div>
   </div>
 
-  <div class="price-card">
+  <div tuiAppearance="floating" tuiCardLarge>
     <p class="price-card__date">Цена акции 10 ноября 2024</p>
-    <p class="price-card__money">{{stockItem.price}} ₽</p>
-    <button>Открыть счет</button>
+    <div tuiTitle class="price-card__money">
+      {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
+    </div>
+    <button
+      appearance="primary"
+      size="m"
+      tuiButton
+      type="button"
+    >
+      Открыть счет
+    </button>
     <p>
-      Если у вас уже есть счет,
+      Если у вас уже есть счет,<br />
       <a href="#">войдите в личный кабинет</a>
     </p>
   </div>

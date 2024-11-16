@@ -2,11 +2,26 @@ import {Component, signal} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {StocksService} from '../services/stocks.service';
 import {IStock} from '../models/stock.models';
+import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
+import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiTitle} from '@taiga-ui/core';
+import {TuiAvatar} from '@taiga-ui/kit';
+import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-stock-detail',
   standalone: true,
-  imports: [],
+  imports: [
+    TuiCardLarge,
+    TuiAppearance,
+    TuiHeader,
+    TuiTitle,
+    TuiAvatar,
+    TuiButton,
+    TuiCurrencyPipe,
+    AsyncPipe,
+    TuiFormatNumberPipe
+  ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less'
 })
