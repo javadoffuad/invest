@@ -31,8 +31,8 @@
       <div class="stock__icon-badge">
         <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
         <div class="stock__name">
-          <span>{{ item.name }}</span>
-          <span>{{ item.shortName }}</span>
+          <span class="stock__brand-name">{{ item.name }}</span>
+          <span class="stock__brand-ticker">{{ item.shortName }}</span>
         </div>
       </div>
     </td>
@@ -40,8 +40,8 @@
       *tuiCell="'price'"
       tuiTd
     >
-      <p>{{ item.price.value | tuiFormatNumber | async }} {{ item.price.currency | tuiCurrency }}</p>
-      <p>1 лот = {{item.lotSize}} {{item.lotSize === 1 ? 'акция' : 'акций'}}</p>
+      <div class="stock__price">{{ item.price.value | tuiFormatNumber | async }} {{ item.price.currency | tuiCurrency }}</div>
+      <span class="stock__lot-size">1 лот = {{item.lotSize}} {{item.lotSize === 1 ? 'акция' : 'акций'}}</span>
     </td>
     <td
       *tuiCell="'absolutePrice'"
