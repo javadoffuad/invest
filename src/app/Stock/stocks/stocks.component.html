@@ -31,7 +31,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="minPriceIncrement">
     <th mat-header-cell *matHeaderCellDef> Цена за день </th>
-    <td mat-cell *matCellDef="let element"> {{element.minPriceIncrement}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.earnings.absolute.value}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

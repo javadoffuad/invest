@@ -12,15 +12,18 @@ export class StocksService {
       shortName: 'GMKN',
       price: {
         currency: 'RUB',
-        value: 100.8,
+        value: 115.16,
       },
       earnings: {
         absolute: {
-          value: null,
-          currency: null,
+          value: 0,
+          currency: 'RUB',
         },
-        previousPrice: {},
-        relative:
+        previousPrice: {
+          value: 115.16,
+          currency: 'RUB',
+        },
+        relative: 0,
       },
       lotSize: 1,
       sectorId: 1,
@@ -33,7 +36,17 @@ export class StocksService {
         currency: 'RUB',
         value: 103.96,
       },
-      minPriceIncrement: 1.71,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 103.96,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 1,
       sectorId: 1,
     },
@@ -45,7 +58,17 @@ export class StocksService {
         currency: 'RUB',
         value: 121.8,
       },
-      minPriceIncrement: 3.18,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 121.8,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 1,
       sectorId: 1,
     },
@@ -57,7 +80,17 @@ export class StocksService {
         currency: 'RUB',
         value: 1438,
       },
-      minPriceIncrement: 22.5,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 1438,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 10,
       sectorId: 3,
     },
@@ -69,7 +102,17 @@ export class StocksService {
         currency: 'USD',
         value: 4245,
       },
-      minPriceIncrement: 31,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 4245,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 1,
       sectorId: 4,
     },
@@ -81,7 +124,17 @@ export class StocksService {
         currency: 'RUB',
         value: 4520,
       },
-      minPriceIncrement: 30.5,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 4520,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 1,
       sectorId: 2,
     },
@@ -93,7 +146,17 @@ export class StocksService {
         currency: 'RUB',
         value: 189.32,
       },
-      minPriceIncrement: 2.16,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 189.32,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 1,
       sectorId: 5,
     },
@@ -105,7 +168,17 @@ export class StocksService {
         currency: 'RUB',
         value: 23.715,
       },
-      minPriceIncrement: 0.135,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 23.715,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 100,
       sectorId: 5,
     },
@@ -117,7 +190,17 @@ export class StocksService {
         currency: 'RUB',
         value: 35.855,
       },
-      minPriceIncrement: 0.465,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 35.855,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 10,
       sectorId: 1,
     },
@@ -129,7 +212,17 @@ export class StocksService {
         currency: 'RUB',
         value: 55.99,
       },
-      minPriceIncrement: 2.02,
+      earnings: {
+        absolute: {
+          value: 0,
+          currency: 'RUB',
+        },
+        previousPrice: {
+          value: 55.99,
+          currency: 'RUB',
+        },
+        relative: 0,
+      },
       lotSize: 10,
       sectorId: 2,
     },
