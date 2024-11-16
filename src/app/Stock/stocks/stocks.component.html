@@ -21,14 +21,20 @@
   <tr
     *ngFor="let item of stockItems"
     [routerLink]="'stocks/' + item.shortName"
+    class="stock__tr"
     tuiTr
   >
     <td
       *tuiCell="'name'"
       tuiTd
     >
-      <p>{{ item.name }}</p>
-      <p>{{ item.shortName }}</p>
+      <div class="stock__icon-badge">
+        <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
+        <div class="stock__name">
+          <span>{{ item.name }}</span>
+          <span>{{ item.shortName }}</span>
+        </div>
+      </div>
     </td>
     <td
       *tuiCell="'price'"

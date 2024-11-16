@@ -10,6 +10,8 @@ export class StocksService {
       id: 1,
       name: 'Норильский никель',
       shortName: 'GMKN',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/nornikelx160.png',
+      isin: 'RU0007288411',
       price: {
         currency: 'RUB',
         value: 115.16,
@@ -25,13 +27,15 @@ export class StocksService {
         },
         relative: 0,
       },
-      lotSize: 1,
+      lotSize: 10,
       sectorId: 1,
     },
     {
       id: 2,
       name: 'Мечел',
       shortName: 'MTLR',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0DKXV5x160.png',
+      isin: 'RU000A0DKXV5',
       price: {
         currency: 'RUB',
         value: 103.96,
@@ -54,6 +58,8 @@ export class StocksService {
       id: 3,
       name: 'НЛМК',
       shortName: 'NLMK',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009046452x160.png',
+      isin: 'RU0009046452',
       price: {
         currency: 'RUB',
         value: 121.8,
@@ -76,6 +82,8 @@ export class StocksService {
       id: 4,
       name: 'ГК Самолет',
       shortName: 'SMLT',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A102RX6x160.png',
+      isin: 'RU000A0ZZG02',
       price: {
         currency: 'RUB',
         value: 1438,
@@ -98,6 +106,8 @@ export class StocksService {
       id: 5,
       name: 'Хэдхантер',
       shortName: 'HEAD',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/US42207L1061x160.png',
+      isin: 'RU000A107662',
       price: {
         currency: 'USD',
         value: 4245,
@@ -120,6 +130,8 @@ export class StocksService {
       id: 6,
       name: 'Магнит',
       shortName: 'MGNT',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JKQU8x160.png',
+      isin: 'RU000A0JKQU8',
       price: {
         currency: 'RUB',
         value: 4520,
@@ -142,6 +154,8 @@ export class StocksService {
       id: 7,
       name: 'Московская Биржа',
       shortName: 'MOEX',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JR4A1x160.png',
+      isin: 'RU000A0JR4A1',
       price: {
         currency: 'RUB',
         value: 189.32,
@@ -164,6 +178,8 @@ export class StocksService {
       id: 8,
       name: 'Сургутнефтегаз',
       shortName: 'SNGS',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0008926258x160.png',
+      isin: 'RU0008926258',
       price: {
         currency: 'RUB',
         value: 23.715,
@@ -186,6 +202,8 @@ export class StocksService {
       id: 9,
       name: 'ММК',
       shortName: 'MAGN',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009084396x160.png',
+      isin: 'RU0009084396',
       price: {
         currency: 'RUB',
         value: 35.855,
@@ -208,6 +226,8 @@ export class StocksService {
       id: 10,
       name: 'Аэрофлот',
       shortName: 'AFLT',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009062285x160.png',
+      isin: 'RU0009062285',
       price: {
         currency: 'RUB',
         value: 55.99,
