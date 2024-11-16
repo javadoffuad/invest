@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import {AsyncPipe, NgForOf} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {TuiTable} from '@taiga-ui/addon-table';
-import {TuiFormatNumberPipe, TuiIconPipe} from '@taiga-ui/core';
+import {TuiFormatNumberPipe, TuiIconPipe, TuiTitle} from '@taiga-ui/core';
 import { IActivitySector, IStock } from '../models/stock.models';
 import {StocksService} from '../services/stocks.service';
 import {ActivitySectorsService} from '../services/activity-sectors.service';
@@ -12,7 +12,7 @@ import {TuiAvatar} from '@taiga-ui/kit';
 @Component({
   selector: 'app-stocks',
   standalone: true,
-  imports: [RouterLink, TuiTable, TuiFormatNumberPipe, NgForOf, AsyncPipe, TuiCurrencyPipe, TuiAvatar, TuiIconPipe],
+  imports: [RouterLink, TuiTable, TuiFormatNumberPipe, NgForOf, AsyncPipe, TuiCurrencyPipe, TuiAvatar, TuiIconPipe, TuiTitle],
   templateUrl: './stocks.component.html',
   styleUrl: './stocks.component.less'
 })
