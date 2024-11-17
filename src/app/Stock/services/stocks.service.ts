@@ -12,6 +12,7 @@ export class StocksService {
       shortName: 'GMKN',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/nornikelx160.png',
       isin: 'RU0007288411',
+      sector: 'Materials',
       price: {
         currency: 'RUB',
         value: 115.16,
@@ -36,6 +37,7 @@ export class StocksService {
       shortName: 'MTLR',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0DKXV5x160.png',
       isin: 'RU000A0DKXV5',
+      sector: 'Materials',
       price: {
         currency: 'RUB',
         value: 103.96,
@@ -60,6 +62,7 @@ export class StocksService {
       shortName: 'NLMK',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009046452x160.png',
       isin: 'RU0009046452',
+      sector: 'Materials',
       price: {
         currency: 'RUB',
         value: 121.8,
@@ -84,6 +87,7 @@ export class StocksService {
       shortName: 'SMLT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A102RX6x160.png',
       isin: 'RU000A0ZZG02',
+      sector: 'Consumer',
       price: {
         currency: 'RUB',
         value: 1438,
@@ -108,6 +112,7 @@ export class StocksService {
       shortName: 'HEAD',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/US42207L1061x160.png',
       isin: 'RU000A107662',
+      sector: 'IT',
       price: {
         currency: 'USD',
         value: 4245,
@@ -132,6 +137,7 @@ export class StocksService {
       shortName: 'MGNT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JKQU8x160.png',
       isin: 'RU000A0JKQU8',
+      sector: 'Consumer',
       price: {
         currency: 'RUB',
         value: 4520,
@@ -156,6 +162,7 @@ export class StocksService {
       shortName: 'MOEX',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JR4A1x160.png',
       isin: 'RU000A0JR4A1',
+      sector: 'Consumer',
       price: {
         currency: 'RUB',
         value: 189.32,
@@ -180,6 +187,7 @@ export class StocksService {
       shortName: 'SNGS',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0008926258x160.png',
       isin: 'RU0008926258',
+      sector: 'Energy',
       price: {
         currency: 'RUB',
         value: 23.715,
@@ -204,6 +212,7 @@ export class StocksService {
       shortName: 'MAGN',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009084396x160.png',
       isin: 'RU0009084396',
+      sector: 'Materials',
       price: {
         currency: 'RUB',
         value: 35.855,
@@ -228,6 +237,7 @@ export class StocksService {
       shortName: 'AFLT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009062285x160.png',
       isin: 'RU0009062285',
+      sector: 'Consumer',
       price: {
         currency: 'RUB',
         value: 55.99,

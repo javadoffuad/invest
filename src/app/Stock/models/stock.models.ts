@@ -6,6 +6,7 @@ export interface IStock {
   isin: string;
   price: IPrice;
   lotSize: number;
+  sector: SectorCode,
   earnings: {
     absolute: IPrice;
     previousPrice: IPrice;
@@ -20,6 +21,8 @@ export interface IPrice {
   value: number;
   currency: Currency;
 }
+
+type SectorCode = 'Materials' | 'Consumer' | 'IT' | 'Energy' | 'Utilities' | 'Industrials';
 
 export interface IActivitySector {
   id: number;
