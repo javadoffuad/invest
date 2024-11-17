@@ -49,7 +49,7 @@
   </div>
 
   <div tuiAppearance="floating" tuiCardLarge>
-    <p class="price-card__date">Цена акции 10 ноября 2024</p>
+    <p class="price-card__date">Цена акции {{ today | date }}</p>
     <div tuiTitle class="price-card__money">
       {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
     </div>
@@ -63,7 +63,11 @@
     </button>
     <p>
       Если у вас уже есть счет,<br />
-      <a href="#">войдите в личный кабинет</a>
+      <a
+        tuiLink
+        [routerLink]="'/login'">
+        войдите в личный кабинет
+      </a>
     </p>
   </div>
 }

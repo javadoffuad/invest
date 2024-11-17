@@ -9,5 +9,9 @@ export const routes: Routes = [
     path: 'stocks/:name',
     loadComponent: () =>
       import('./Stock/stock-detail/stock-detail.component').then(c => c.StockDetailComponent),
-  }
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./Login/login/login.component').then(c => c.LoginComponent)
+  },
 ];

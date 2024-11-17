@@ -1,12 +1,12 @@
 import {Component, signal} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 import {StocksService} from '../services/stocks.service';
 import {IStock} from '../models/stock.models';
 import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
-import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiTitle} from '@taiga-ui/core';
+import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle} from '@taiga-ui/core';
 import {TuiAvatar} from '@taiga-ui/kit';
 import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-stock-detail',
@@ -20,7 +20,10 @@ import {AsyncPipe} from '@angular/common';
     TuiButton,
     TuiCurrencyPipe,
     AsyncPipe,
-    TuiFormatNumberPipe
+    TuiFormatNumberPipe,
+    DatePipe,
+    RouterLink,
+    TuiLink
   ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less'
@@ -28,6 +31,7 @@ import {AsyncPipe} from '@angular/common';
 export class StockDetailComponent {
   protected stockShortName = signal<string>('');
   protected stock = signal<IStock | null>(null);
+  protected today = Date.now();
 
   constructor(
     private route: ActivatedRoute,
