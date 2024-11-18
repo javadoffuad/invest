@@ -41,6 +41,13 @@
         {{ stockItem.name }}
         <span tuiSubtitle>{{ stockItem.shortName }}</span>
       </h1>
+      <input
+        size="s"
+        tuiLike
+        type="checkbox"
+        [checkedIcon]="'@tui.star-filled'"
+        [uncheckedIcon]="'@tui.star'"
+      />
     </header>
     <div class="stock__sector">
       <p class="stock__sector-name">Доходность за полгода</p>

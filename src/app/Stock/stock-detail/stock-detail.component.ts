@@ -4,7 +4,7 @@ import {StocksService} from '../services/stocks.service';
 import {IStock} from '../models/stock.models';
 import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
 import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle} from '@taiga-ui/core';
-import {TuiAvatar} from '@taiga-ui/kit';
+import {TuiAvatar, TuiLike} from '@taiga-ui/kit';
 import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
 import {AsyncPipe, DatePipe} from '@angular/common';
 
@@ -23,7 +23,8 @@ import {AsyncPipe, DatePipe} from '@angular/common';
     TuiFormatNumberPipe,
     DatePipe,
     RouterLink,
-    TuiLink
+    TuiLink,
+    TuiLike
   ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less'
