@@ -6,13 +6,13 @@ export interface IStock {
   isin: string;
   price: IPrice;
   lotSize: number;
-  sector: SectorCode,
+  sector: string,
   earnings: {
     absolute: IPrice;
     previousPrice: IPrice;
     relative: number;
   },
-  sectorId: IActivitySector['id'];
+  sectorId: ISector['id'];
 }
 
 export type Currency = 'USD' | 'RUB';
@@ -22,9 +22,8 @@ export interface IPrice {
   currency: Currency;
 }
 
-type SectorCode = 'Materials' | 'Consumer' | 'IT' | 'Energy' | 'Utilities' | 'Industrials';
-
-export interface IActivitySector {
+export interface ISector {
   id: number;
+  code: string;
   name: string;
 }
