@@ -2,13 +2,18 @@
   :host {
     display: flex;
     padding: 30px;
+    flex-wrap: wrap;
   }
   .stock {
     width: 720px;
     margin-right: 30px;
+    flex-grow: 1;
   }
   .stock__logo {
     margin-right: 15px;
+  }
+  .price-card {
+    min-width: 270px;
   }
   .price-card__date {
     color: rgba(0, 0, 0, .54);
@@ -19,6 +24,9 @@
   .price-card__money {
     font-size: 28px;
     font-weight: 500;
+  }
+  .info {
+    width: 100%;
   }
 </style>
 
@@ -59,7 +67,7 @@
     </div>
   </div>
 
-  <div tuiAppearance="floating" tuiCardLarge>
+  <div tuiAppearance="floating" tuiCardLarge class="price-card">
     <p class="price-card__date">Цена акции {{ today | date }}</p>
     <div tuiTitle class="price-card__money">
       {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
@@ -80,5 +88,31 @@
         войдите в личный кабинет
       </a>
     </p>
+  </div>
+
+  <div class="info">
+    <tui-tabs [(activeItemIndex)]="activeItemIndex">
+      <button
+        tuiTab
+        type="button"
+        (click)="onClick('Maps')"
+      >
+        Обзор
+      </button>
+      <button
+        tuiTab
+        type="button"
+        (click)="onClick('Calls')"
+      >
+        Пульс
+      </button>
+      <button
+        tuiTab
+        type="button"
+        (click)="onClick('Settings')"
+      >
+        Дивиденды
+      </button>
+    </tui-tabs>
   </div>
 }

@@ -4,7 +4,7 @@ import {StocksService} from '../services/stocks.service';
 import {IStock} from '../models/stock.models';
 import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
 import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle} from '@taiga-ui/core';
-import {TuiAvatar, TuiLike} from '@taiga-ui/kit';
+import {TuiAvatar, TuiLike, TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
 import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
 import {AsyncPipe, DatePipe} from '@angular/common';
 
@@ -24,7 +24,9 @@ import {AsyncPipe, DatePipe} from '@angular/common';
     DatePipe,
     RouterLink,
     TuiLink,
-    TuiLike
+    TuiLike,
+    TuiTabsHorizontal,
+    TuiTab
   ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less'
@@ -33,6 +35,7 @@ export class StockDetailComponent {
   protected stockShortName = signal<string>('');
   protected stock = signal<IStock | null>(null);
   protected today = Date.now();
+  protected activeItemIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,5 +47,9 @@ export class StockDetailComponent {
     this.stockShortName.set(stockShortName);
     const stock = this.stocksService.getStock(stockShortName);
     this.stock.set(stock);
+  }
+
+  onClick(tabName: string) {
+    console.log('click', tabName);
   }
 }
