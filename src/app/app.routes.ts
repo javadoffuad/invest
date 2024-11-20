@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {PageNotFoundComponent} from './Layouts/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -13,5 +14,9 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./Login/login/login.component').then(c => c.LoginComponent)
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./Layouts/page-not-found/page-not-found.component').then(c => c.PageNotFoundComponent)
   },
 ];
