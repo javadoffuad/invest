@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {StocksService} from '../services/stocks.service';
 import {IStock} from '../models/stock.models';
@@ -29,7 +29,8 @@ import {AsyncPipe, DatePipe} from '@angular/common';
     TuiTab
   ],
   templateUrl: './stock-detail.component.html',
-  styleUrl: './stock-detail.component.less'
+  styleUrl: './stock-detail.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StockDetailComponent {
   protected stock = signal<IStock | null>(null);
