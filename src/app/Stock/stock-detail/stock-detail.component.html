@@ -69,6 +69,7 @@
 </style>
 
 @let stockItem = stock();
+@let stockSectorName = sectorName();
 
 @if (stockItem) {
   <div class="main-container">
@@ -92,7 +93,7 @@
             </div>
             <div tuiTitle>
               <span tuiSubtitle>Сектор</span>
-              {{stockItem.sector}}
+              {{stockSectorName}}
             </div>
           </div>
         </div>

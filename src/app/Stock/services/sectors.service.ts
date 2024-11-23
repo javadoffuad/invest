@@ -89,7 +89,11 @@ export class SectorsService {
     return this.items;
   }
 
-  public getItem(sectorId: ISector['id']): ISector | null {
+  public getItemById(sectorId: ISector['id']): ISector | null {
     return this.items.find(item => item.id === sectorId) || null;
+  }
+
+  public getItemByCode(code: ISector['code']): ISector | null {
+    return this.items.find(item => item.code === code) || null;
   }
 }
