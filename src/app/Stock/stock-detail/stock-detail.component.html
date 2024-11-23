@@ -2,15 +2,43 @@
   :host {
     display: flex;
     padding: 30px;
-    flex-wrap: wrap;
+  }
+  .main-container {
+    margin-right: 30px;
   }
   .stock {
     width: 720px;
-    margin-right: 30px;
     flex-grow: 1;
   }
+  .stock__sprite {
+    display: flex;
+    flex-direction: row;
+    min-height: 184px;
+  }
+  .stock__section {
+    display: flex;
+  }
+  .stock__section_left {
+    flex-grow: 1;
+    flex-flow: column;
+  }
+  .stock__extra-info {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .stock__logo-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .stock__star {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   .stock__logo {
-    margin-right: 15px;
+    margin-right: 28px;
   }
   .price-card {
     min-width: 270px;
@@ -27,99 +55,122 @@
   }
   .info {
     width: 100%;
+    margin-top: 10px;
+  }
+  .stock__name-wrap {
+    display: flex;
+    flex-grow: 1;
+    min-height: 10px;
+  }
+  .stock__logo-wrap {
+    min-height: 10px;
   }
 </style>
 
 @let stockItem = stock();
 
 @if (stockItem) {
-  <div
-    class="stock"
-    tuiAppearance="floating"
-    tuiCardLarge
-  >
-    <header tuiHeader>
-      <tui-avatar
-        class="stock__logo"
-        appearance="primary"
-        size="xl"
-        [src]="stockItem.logoName"
-      />
-      <h1 tuiTitle>
-        {{ stockItem.name }}
-        <span tuiSubtitle>{{ stockItem.shortName }}</span>
-      </h1>
-      <input
-        size="m"
-        tuiLike
-        type="checkbox"
-        [checkedIcon]="'@tui.star-filled'"
-        [uncheckedIcon]="'@tui.star'"
-      />
-    </header>
-    <div class="stock__sector">
-      <p class="stock__sector-name">Доходность за полгода</p>
-      <p>−10,75%</p>
-    </div>
-    <div class="stock__sector">
-      <p class="stock__sector-name">Сектор</p>
-      <p>{{stockItem.sector}}</p>
-    </div>
-  </div>
-
-  <div tuiAppearance="floating" tuiCardLarge class="price-card">
-    <p class="price-card__date">Цена акции {{ today | date }}</p>
-    <div tuiTitle class="price-card__money">
-      {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
-    </div>
-    <button
-      appearance="accent"
-      size="m"
-      tuiButton
-      type="button"
+  <div class="main-container">
+    <div
+      class="stock"
+      tuiAppearance="floating"
+      tuiCardLarge
     >
-      Открыть счет
-    </button>
-    <p>
-      Если у вас уже есть счет,<br />
-      <a
-        tuiLink
-        [routerLink]="'/login'">
-        войдите в личный кабинет
-      </a>
-    </p>
+      <div class="stock__sprite">
+        <div class="stock__section stock__section_left">
+          <div class="stock__name-wrap">
+            <h1 tuiTitle>
+              {{ stockItem.name }}
+              <span tuiSubtitle>{{ stockItem.shortName }}</span>
+            </h1>
+          </div>
+          <div class="stock__extra-info">
+            <div tuiTitle>
+              Доходность за полгода
+              <span tuiSubtitle>−10,75%</span>
+            </div>
+            <div tuiTitle>
+              Сектор
+              <span tuiSubtitle>{{stockItem.sector}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="stock__logo-wrap">
+          <tui-avatar
+            class="stock__logo"
+            appearance="primary"
+            size="xxl"
+            [src]="stockItem.logoName"
+          />
+          <input
+            size="m"
+            tuiLike
+            type="checkbox"
+            class="stock__star"
+            appearance="info"
+            [checkedIcon]="'@tui.star-filled'"
+            [uncheckedIcon]="'@tui.star'"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <tui-tabs [(activeItemIndex)]="activeItemIndex">
+        <button
+          tuiTab
+          type="button"
+          (click)="onClick('Review')"
+        >
+          Обзор
+        </button>
+        <button
+          tuiTab
+          type="button"
+          (click)="onClick('Pulse')"
+        >
+          Пульс
+        </button>
+        <button
+          tuiTab
+          type="button"
+          (click)="onClick('Dividends')"
+        >
+          Дивиденды
+        </button>
+        <button
+          tuiTab
+          type="button"
+          (click)="onClick('News')"
+        >
+          Новости
+        </button>
+      </tui-tabs>
+    </div>
   </div>
 
-  <div class="info">
-    <tui-tabs [(activeItemIndex)]="activeItemIndex">
+  <div class="sidebar">
+    <div tuiAppearance="floating" tuiCardLarge class="price-card">
+      <p class="price-card__date">Цена акции {{ today | date }}</p>
+      <div tuiTitle class="price-card__money">
+        {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
+      </div>
       <button
-        tuiTab
+        appearance="accent"
+        size="m"
+        tuiButton
         type="button"
-        (click)="onClick('Review')"
       >
-        Обзор
+        Открыть счет
       </button>
-      <button
-        tuiTab
-        type="button"
-        (click)="onClick('Pulse')"
-      >
-        Пульс
-      </button>
-      <button
-        tuiTab
-        type="button"
-        (click)="onClick('Dividends')"
-      >
-        Дивиденды
-      </button>
-      <button
-        tuiTab
-        type="button"
-        (click)="onClick('News')"
-      >
-        Новости
-      </button>
-    </tui-tabs>
+      <p>
+        Если у вас уже есть счет,<br />
+        <a
+          tuiLink
+          [routerLink]="'/login'">
+          войдите в личный кабинет
+        </a>
+      </p>
+    </div>
   </div>
 }
