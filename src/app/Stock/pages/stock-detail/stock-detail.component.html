@@ -8,20 +8,6 @@
     margin-right: 30px;
   }
 
-  .price-card {
-    min-width: 270px;
-    align-items: center !important;
-  }
-  .price-card__date {
-    color: rgba(0, 0, 0, .54);
-    margin-bottom: 12px;
-    font-size: 13px;
-    font-weight: 400;
-  }
-  .price-card__money {
-    font-size: 28px;
-    font-weight: 500;
-  }
   .info {
     width: 100%;
     margin-top: 10px;
@@ -33,10 +19,12 @@
 
 @if (stockItem) {
   <div class="main-container">
-    <app-stock-card
-      [sectorName]="stockSectorName"
-      [stock]="stockItem">
-    </app-stock-card>
+    @defer {
+      <app-stock-card
+        [sectorName]="stockSectorName"
+        [stock]="stockItem">
+      </app-stock-card>
+    }
 
     <div class="info">
       <tui-tabs [(activeItemIndex)]="activeItemIndex">
@@ -73,27 +61,8 @@
   </div>
 
   <div class="sidebar">
-    <div tuiAppearance="floating" tuiCardLarge class="price-card">
-      <p class="price-card__date">Цена акции {{ today | date }}</p>
-      <div tuiTitle class="price-card__money">
-        {{stockItem.price.value | tuiFormatNumber | async}} {{stockItem.price.currency | tuiCurrency}}
-      </div>
-      <button
-        appearance="accent"
-        size="l"
-        tuiButton
-        type="button"
-      >
-        Открыть счет
-      </button>
-      <p>
-        Если у вас уже есть счет,<br />
-        <a
-          tuiLink
-          [routerLink]="'/login'">
-          войдите в личный кабинет
-        </a>
-      </p>
-    </div>
+    @defer {
+      <app-price-card [price]="stockItem.price"></app-price-card>
+    }
   </div>
 }

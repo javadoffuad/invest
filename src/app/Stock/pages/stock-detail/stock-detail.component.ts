@@ -2,32 +2,20 @@ import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {StocksService} from '../../services/stocks.service';
 import {ISector, IStock} from '../../models/stock.models';
-import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
-import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle} from '@taiga-ui/core';
-import {TuiAvatar, TuiLike, TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
-import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
-import {AsyncPipe, DatePipe} from '@angular/common';
+import {TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
 import {SectorsService} from '../../services/sectors.service';
 import {StockCardComponent} from './components/stock-card/stock-card.component';
+import {PriceCardComponent} from './components/price-card/price-card.component';
 
 @Component({
   selector: 'app-stock-detail',
   standalone: true,
   imports: [
-    TuiCardLarge,
-    TuiAppearance,
-    TuiHeader,
-    TuiTitle,
-    TuiButton,
-    TuiCurrencyPipe,
-    AsyncPipe,
-    TuiFormatNumberPipe,
-    DatePipe,
     RouterLink,
-    TuiLink,
     TuiTabsHorizontal,
+    TuiTab,
     StockCardComponent,
-    TuiTab
+    PriceCardComponent
   ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less',
@@ -36,7 +24,6 @@ import {StockCardComponent} from './components/stock-card/stock-card.component';
 export class StockDetailComponent {
   protected stock = signal<IStock | null>(null);
   protected sectorName = signal<ISector['name'] | null>(null);
-  protected today = Date.now();
   protected activeItemIndex = 0;
 
   constructor(
@@ -56,7 +43,7 @@ export class StockDetailComponent {
     this.stock.set(stock);
   }
 
-  onClick(tabName: string) {
-    console.log('click', tabName);
+  onClick(sectionName: string) {
+    console.log('click', sectionName);
   }
 }

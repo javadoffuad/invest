@@ -1,0 +1,24 @@
+@let priceData = price();
+
+<div tuiAppearance="floating" tuiCardLarge class="price-card">
+  <p class="price-card__date">Цена акции {{ today | date }}</p>
+  <div tuiTitle class="price-card__money">
+    {{priceData.value | tuiFormatNumber | async}} {{priceData.currency | tuiCurrency}}
+  </div>
+  <button
+    appearance="accent"
+    size="l"
+    tuiButton
+    type="button"
+  >
+    Открыть счет
+  </button>
+  <p>
+    Если у вас уже есть счет,<br />
+    <a
+      tuiLink
+      [routerLink]="'/login'">
+      войдите в личный кабинет
+    </a>
+  </p>
+</div>
