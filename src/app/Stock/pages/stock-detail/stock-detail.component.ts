@@ -1,13 +1,13 @@
 import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
-import {StocksService} from '../services/stocks.service';
-import {ISector, IStock} from '../models/stock.models';
+import {StocksService} from '../../services/stocks.service';
+import {ISector, IStock} from '../../models/stock.models';
 import {TuiCardLarge, TuiHeader} from '@taiga-ui/layout';
 import {TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle} from '@taiga-ui/core';
 import {TuiAvatar, TuiLike, TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
 import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
 import {AsyncPipe, DatePipe} from '@angular/common';
-import {SectorsService} from '../services/sectors.service';
+import {SectorsService} from '../../services/sectors.service';
 
 @Component({
   selector: 'app-stock-detail',

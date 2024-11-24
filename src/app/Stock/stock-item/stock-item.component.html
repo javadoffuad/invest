@@ -1,7 +1,0 @@
-@let stockItem = stock();
-
-@if (stockItem) {
-    <div>
-        <p [routerLink]="'stocks/' + stockItem.shortName">{{stockItem.name}}</p>
-    </div>
-}
