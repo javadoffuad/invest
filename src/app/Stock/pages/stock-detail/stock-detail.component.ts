@@ -8,6 +8,7 @@ import {TuiAvatar, TuiLike, TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
 import {TuiCurrencyPipe} from '@taiga-ui/addon-commerce';
 import {AsyncPipe, DatePipe} from '@angular/common';
 import {SectorsService} from '../../services/sectors.service';
+import {StockCardComponent} from './components/stock-card/stock-card.component';
 
 @Component({
   selector: 'app-stock-detail',
@@ -17,7 +18,6 @@ import {SectorsService} from '../../services/sectors.service';
     TuiAppearance,
     TuiHeader,
     TuiTitle,
-    TuiAvatar,
     TuiButton,
     TuiCurrencyPipe,
     AsyncPipe,
@@ -25,8 +25,8 @@ import {SectorsService} from '../../services/sectors.service';
     DatePipe,
     RouterLink,
     TuiLink,
-    TuiLike,
     TuiTabsHorizontal,
+    StockCardComponent,
     TuiTab
   ],
   templateUrl: './stock-detail.component.html',
