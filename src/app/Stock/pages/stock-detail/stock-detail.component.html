@@ -20,42 +20,18 @@
 @if (stockItem) {
   <div class="main-container">
     @defer {
-      <app-stock-card
-        [sectorName]="stockSectorName"
-        [stock]="stockItem">
+      <app-stock-card [sectorName]="stockSectorName" [stock]="stockItem">
       </app-stock-card>
     }
 
     <div class="info">
       <tui-tabs [(activeItemIndex)]="activeItemIndex">
-        <button
-          tuiTab
-          type="button"
-          (click)="onClick('Review')"
-        >
-          Обзор
-        </button>
-        <button
-          tuiTab
-          type="button"
-          (click)="onClick('Pulse')"
-        >
-          Пульс
-        </button>
-        <button
-          tuiTab
-          type="button"
-          (click)="onClick('Dividends')"
-        >
+        <button tuiTab type="button" (click)="onClick('Review')">Обзор</button>
+        <button tuiTab type="button" (click)="onClick('Pulse')">Пульс</button>
+        <button tuiTab type="button" (click)="onClick('Dividends')">
           Дивиденды
         </button>
-        <button
-          tuiTab
-          type="button"
-          (click)="onClick('News')"
-        >
-          Новости
-        </button>
+        <button tuiTab type="button" (click)="onClick('News')">Новости</button>
       </tui-tabs>
     </div>
   </div>

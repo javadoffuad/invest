@@ -6,12 +6,12 @@ export interface IStock {
   isin: string;
   price: IPrice;
   lotSize: number;
-  sector: string,
+  sector: string;
   earnings: {
     absolute: IPrice;
     previousPrice: IPrice;
     relative: number;
-  },
+  };
   sectorId: ISector['id'];
 }
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {IStock} from '../models/stock.models';
+import { IStock } from '../models/stock.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StocksService {
   private stocks: IStock[] = [
@@ -258,13 +258,15 @@ export class StocksService {
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
   public getStocks() {
     return this.stocks;
   }
 
   public getStock(stockShortName: IStock['shortName']): IStock | null {
-    return this.stocks.find(stock => stock.shortName === stockShortName) || null;
+    return (
+      this.stocks.find((stock) => stock.shortName === stockShortName) || null
+    );
   }
 }

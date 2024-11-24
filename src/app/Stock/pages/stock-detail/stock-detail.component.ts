@@ -1,11 +1,11 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
-import {StocksService} from '../../services/stocks.service';
-import {ISector, IStock} from '../../models/stock.models';
-import {TuiTab, TuiTabsHorizontal} from '@taiga-ui/kit';
-import {SectorsService} from '../../services/sectors.service';
-import {StockCardComponent} from './components/stock-card/stock-card.component';
-import {PriceCardComponent} from './components/price-card/price-card.component';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { StocksService } from '../../services/stocks.service';
+import { ISector, IStock } from '../../models/stock.models';
+import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
+import { SectorsService } from '../../services/sectors.service';
+import { StockCardComponent } from './components/stock-card/stock-card.component';
+import { PriceCardComponent} from './components/price-card/price-card.component';
 
 @Component({
   selector: 'app-stock-detail',
@@ -15,7 +15,7 @@ import {PriceCardComponent} from './components/price-card/price-card.component';
     TuiTabsHorizontal,
     TuiTab,
     StockCardComponent,
-    PriceCardComponent
+    PriceCardComponent,
   ],
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less',
