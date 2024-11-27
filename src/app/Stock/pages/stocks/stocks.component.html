@@ -11,35 +11,36 @@
     </tr>
   </thead>
   <tbody tuiTbody [data]="stockItems">
-    <tr
-      *ngFor="let item of stockItems"
-      [routerLink]="'stocks/' + item.shortName"
-      class="stock__tr"
-      tuiTr
-    >
-      <td *tuiCell="'name'" tuiTd>
-        <div class="stock__icon-badge">
-          <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
+    @for (item of stockItems; track $index) {
+      <tr
+        [routerLink]="'stocks/' + item.shortName"
+        class="stock__tr"
+        tuiTr
+      >
+        <td *tuiCell="'name'" tuiTd>
+          <div class="stock__icon-badge">
+            <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
 
-          <span tuiTitle class="stock__name">
+            <span tuiTitle class="stock__name">
             {{ item.name }}
-            <span tuiSubtitle>{{ item.shortName }}</span>
+              <span tuiSubtitle>{{ item.shortName }}</span>
           </span>
-        </div>
-      </td>
-      <td *tuiCell="'price'" tuiTd>
+          </div>
+        </td>
+        <td *tuiCell="'price'" tuiTd>
         <span tuiTitle>
           {{ item.price.value | tuiFormatNumber | async }}
           {{ item.price.currency | tuiCurrency }}
           <span tuiSubtitle
-            >1 лот = {{ item.lotSize }}
+          >1 лот = {{ item.lotSize }}
             {{ item.lotSize === 1 ? "акция" : "акций" }}</span
           >
         </span>
-      </td>
-      <td *tuiCell="'absolutePrice'" tuiTd>
-        {{ item.earnings.absolute.value | tuiFormatNumber | async }}
-      </td>
-    </tr>
+        </td>
+        <td *tuiCell="'absolutePrice'" tuiTd>
+          {{ item.earnings.absolute.value | tuiFormatNumber | async }}
+        </td>
+      </tr>
+    }
   </tbody>
 </table>
