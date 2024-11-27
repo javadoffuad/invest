@@ -4,12 +4,12 @@ import * as StocksActions from '../actions/stocks.actions';
 
 interface IStocksState {
   stocks: IStock[];
-  selectedStockId: IStock['id'] | null;
+  activeStockId: IStock['id'] | null;
 }
 
 export const initialState: IStocksState = {
   stocks: [],
-  selectedStockId: null,
+  activeStockId: null,
 };
 
 export const STORE_KEY_STOCKS = 'stocks';
