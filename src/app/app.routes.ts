@@ -1,8 +1,16 @@
 import { Routes } from '@angular/router';
+import { provideEffects} from '@ngrx/effects';
+import {StocksEffects} from './Stock/store/stocks/effects/stocks.effects';
+import {provideState} from '@ngrx/store';
+import {stocksReducer, STORE_KEY_STOCKS} from './Stock/store/stocks/reducers/stocks.reducers';
 
 export const routes: Routes = [
   {
     path: '',
+    providers: [
+      provideEffects(StocksEffects),
+      provideState({name: STORE_KEY_STOCKS, reducer: stocksReducer}),
+    ],
     loadComponent: () =>
       import('./Stock/pages/stocks/stocks.component').then(
         (c) => c.StocksComponent,
