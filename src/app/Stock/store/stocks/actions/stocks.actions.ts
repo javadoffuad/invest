@@ -6,6 +6,6 @@ export const loadStocks = createAction(
   props<{ stocks: IStock[] }>()
 );
 export const selectStock = createAction(
-  '[Stocks Page] load stocks',
+  '[Stocks Page] select stock',
   props<{ stockId: IStock['id'] }>()
 );

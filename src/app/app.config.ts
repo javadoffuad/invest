@@ -11,7 +11,6 @@ import localeRu from '@angular/common/locales/ru';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {provideStore} from '@ngrx/store';
-import {provideEffects} from '@ngrx/effects';
 import {provideStoreDevtools} from '@ngrx/store-devtools';
 
 registerLocaleData(localeRu);
@@ -28,7 +27,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideAnimationsAsync(),
     provideStore(),
-    provideEffects(),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),

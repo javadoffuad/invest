@@ -21,6 +21,6 @@ export const stocksReducer = createReducer(
   })),
   on(StocksActions.selectStock, (state, action) => ({
     ...state,
-    selectedStockId: action.stockId,
+    activeStockId: action.stockId,
   })),
 );
