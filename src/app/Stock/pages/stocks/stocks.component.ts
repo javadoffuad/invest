@@ -12,7 +12,7 @@ import { StocksService } from '../../services/stocks.service';
 import { SectorsService } from '../../services/sectors.service';
 import { TuiCurrencyPipe } from '@taiga-ui/addon-commerce';
 import {TuiAvatar} from '@taiga-ui/kit';
-import {StocksToolbarComponent} from './stocks-toolbar/stocks-toolbar.component';
+import {StocksToolbarComponent} from './components/stocks-toolbar/stocks-toolbar.component';
 
 @Component({
   selector: 'app-stocks',
