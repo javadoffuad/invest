@@ -8,19 +8,18 @@ import { StockCardComponent } from './components/stock-card/stock-card.component
 import { PriceCardComponent} from './components/price-card/price-card.component';
 
 @Component({
-  selector: 'app-stock-detail',
-  standalone: true,
-  imports: [
-    RouterLink,
-    TuiTabsHorizontal,
-    TuiTab,
-    StockCardComponent,
-    PriceCardComponent,
-    RouterOutlet,
-  ],
-  templateUrl: './stock-detail.component.html',
-  styleUrl: './stock-detail.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-stock-detail',
+    imports: [
+        RouterLink,
+        TuiTabsHorizontal,
+        TuiTab,
+        StockCardComponent,
+        PriceCardComponent,
+        RouterOutlet,
+    ],
+    templateUrl: './stock-detail.component.html',
+    styleUrl: './stock-detail.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StockDetailComponent {
   protected stock = signal<IStock | null>(null);

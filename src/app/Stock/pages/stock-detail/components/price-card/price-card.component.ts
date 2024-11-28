@@ -13,22 +13,21 @@ import { IPrice } from '../../../../models/stock.models';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-price-card',
-  standalone: true,
-  imports: [
-    AsyncPipe,
-    DatePipe,
-    TuiAppearance,
-    TuiButton,
-    TuiCardLarge,
-    TuiCurrencyPipe,
-    TuiFormatNumberPipe,
-    TuiLink,
-    TuiTitle,
-    RouterLink,
-  ],
-  templateUrl: './price-card.component.html',
-  styleUrl: './price-card.component.less',
+    selector: 'app-price-card',
+    imports: [
+        AsyncPipe,
+        DatePipe,
+        TuiAppearance,
+        TuiButton,
+        TuiCardLarge,
+        TuiCurrencyPipe,
+        TuiFormatNumberPipe,
+        TuiLink,
+        TuiTitle,
+        RouterLink,
+    ],
+    templateUrl: './price-card.component.html',
+    styleUrl: './price-card.component.less'
 })
 export class PriceCardComponent {
   public price = input.required<IPrice>();

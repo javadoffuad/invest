@@ -4,15 +4,14 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {ISector} from '../../../../models/stock.models';
 
 @Component({
-  selector: 'app-stocks-toolbar',
-  standalone: true,
-  imports: [
-    TuiSelectModule,
-    ReactiveFormsModule,
-    TuiTextfieldControllerModule,
-  ],
-  templateUrl: './stocks-toolbar.component.html',
-  styleUrl: './stocks-toolbar.component.less'
+    selector: 'app-stocks-toolbar',
+    imports: [
+        TuiSelectModule,
+        ReactiveFormsModule,
+        TuiTextfieldControllerModule,
+    ],
+    templateUrl: './stocks-toolbar.component.html',
+    styleUrl: './stocks-toolbar.component.less'
 })
 export class StocksToolbarComponent {
   countries = input.required<string[]>();

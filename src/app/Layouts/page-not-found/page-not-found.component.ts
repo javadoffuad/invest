@@ -5,11 +5,10 @@ import {
 } from '@taiga-ui/layout';
 
 @Component({
-  selector: 'app-page-not-found',
-  standalone: true,
-  imports: [TuiBlockStatusComponent, TuiBlockStatusDirective],
-  templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-not-found',
+    imports: [TuiBlockStatusComponent, TuiBlockStatusDirective],
+    templateUrl: './page-not-found.component.html',
+    styleUrl: './page-not-found.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageNotFoundComponent {}

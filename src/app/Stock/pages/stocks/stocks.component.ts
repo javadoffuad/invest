@@ -11,23 +11,22 @@ import { TuiAvatar } from '@taiga-ui/kit';
 import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolbar.component';
 
 @Component({
-  selector: 'app-stocks',
-  standalone: true,
-  imports: [
-    RouterLink,
-    TuiTable,
-    TuiFormatNumberPipe,
-    NgForOf,
-    AsyncPipe,
-    TuiCurrencyPipe,
-    TuiAvatar,
-    TuiIconPipe,
-    TuiTitle,
-    StocksToolbarComponent,
-  ],
-  templateUrl: './stocks.component.html',
-  styleUrl: './stocks.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-stocks',
+    imports: [
+        RouterLink,
+        TuiTable,
+        TuiFormatNumberPipe,
+        NgForOf,
+        AsyncPipe,
+        TuiCurrencyPipe,
+        TuiAvatar,
+        TuiIconPipe,
+        TuiTitle,
+        StocksToolbarComponent,
+    ],
+    templateUrl: './stocks.component.html',
+    styleUrl: './stocks.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StocksComponent {
   protected sectors = signal<ISector[]>([]);
