@@ -2,19 +2,13 @@
 
 <h2 tuiTitle="m" class="title">Каталог акций</h2>
 
-<div>
-  <tui-select [formControl]="controlCurrency" [tuiTextfieldCleaner]="true">
-    Валюта
-    <input
-      placeholder="Выбрать валюту"
-      tuiTextfieldLegacy
-    />
-    <tui-data-list-wrapper
-      *tuiDataList
-      [items]="currencies"
-    />
-  </tui-select>
-</div>
+@defer {
+  <app-stocks-toolbar
+    [countries]="countries()"
+    [currencies]="currencies()"
+    [sectors]="sectors()"
+  ></app-stocks-toolbar>
+}
 
 <table tuiTable class="table" [columns]="displayedColumns">
   <thead>

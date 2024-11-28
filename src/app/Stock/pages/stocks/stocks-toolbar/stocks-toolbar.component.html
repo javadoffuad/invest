@@ -1,0 +1,28 @@
+<div class="toolbar">
+  <tui-select [formControl]="controlCurrency" [tuiTextfieldCleaner]="true">
+    Валюта
+    <select
+      placeholder="Выбрать валюту"
+      tuiSelect
+      [items]="currencies()"
+    ></select>
+  </tui-select>
+
+  <tui-select [formControl]="controlSector" [tuiTextfieldCleaner]="true" [stringify]="namedStringify">
+    Отрасль
+    <select
+      placeholder="Выбрать отрасль"
+      tuiSelect
+      [items]="sectors()"
+    ></select>
+  </tui-select>
+
+  <tui-select [formControl]="controlCountry" [tuiTextfieldCleaner]="true">
+    Страна
+    <select
+      placeholder="Выбрать страну"
+      tuiSelect
+      [items]="countries()"
+    ></select>
+  </tui-select>
+</div>
