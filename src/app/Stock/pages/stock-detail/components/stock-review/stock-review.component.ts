@@ -1,4 +1,6 @@
-import { Component, signal } from '@angular/core';
+import {Component, inject, Signal} from '@angular/core';
+import {IStock} from '../../../../models/stock.models';
+import {ROUTER_OUTLET_DATA} from '@angular/router';
 
 @Component({
     selector: 'app-stock-review',
@@ -7,5 +9,5 @@ import { Component, signal } from '@angular/core';
     styleUrl: './stock-review.component.less'
 })
 export class StockReviewComponent {
-  brandName = signal('ГК Самолет');
+  stock = inject<Signal<IStock>>(ROUTER_OUTLET_DATA);
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { AsyncPipe, NgForOf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TuiTable } from '@taiga-ui/addon-table';
 import { TuiFormatNumberPipe, TuiIconPipe, TuiTitle } from '@taiga-ui/core';
@@ -16,7 +16,6 @@ import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolb
         RouterLink,
         TuiTable,
         TuiFormatNumberPipe,
-        NgForOf,
         AsyncPipe,
         TuiCurrencyPipe,
         TuiAvatar,

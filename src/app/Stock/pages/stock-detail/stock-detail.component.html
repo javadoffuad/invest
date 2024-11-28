@@ -34,7 +34,7 @@
         <button tuiTab type="button" routerLink="news" (click)="onClick('News')">Новости</button>
       </tui-tabs>
 
-      <router-outlet></router-outlet>
+      <router-outlet [routerOutletData]="stock()"></router-outlet>
     </div>
   </div>
 
