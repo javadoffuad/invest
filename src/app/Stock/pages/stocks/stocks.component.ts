@@ -32,9 +32,9 @@ import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolb
 export class StocksComponent {
   protected sectors = signal<ISector[]>([]);
   protected stocks = signal<IStock[]>([]);
-  protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice'];
   protected currencies = signal(['USD', 'RUB', 'EUR']).asReadonly();
   protected countries = signal(['Russia', 'USA', 'Algeria', 'Egypt']).asReadonly();
+  protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
 
   constructor(
     private stocksService: StocksService,

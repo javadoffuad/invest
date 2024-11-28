@@ -6,8 +6,7 @@
   <app-stocks-toolbar
     [countries]="countries()"
     [currencies]="currencies()"
-    [sectors]="sectors()"
-  ></app-stocks-toolbar>
+    [sectors]="sectors()"></app-stocks-toolbar>
 }
 
 <table tuiTable class="table" [columns]="displayedColumns">
@@ -16,15 +15,12 @@
       <th tuiTh [resizable]="true">Название</th>
       <th tuiTh>Цена</th>
       <th tuiTh>Цена за день</th>
+      <th tuiTh>Динамика</th>
     </tr>
   </thead>
   <tbody tuiTbody [data]="stockItems">
     @for (item of stockItems; track $index) {
-      <tr
-        [routerLink]="'stocks/' + item.shortName"
-        class="stock__tr"
-        tuiTr
-      >
+      <tr [routerLink]="'stocks/' + item.shortName" class="stock__tr" tuiTr>
         <td *tuiCell="'name'" tuiTd>
           <div class="stock__icon-badge">
             <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
@@ -36,18 +32,19 @@
           </div>
         </td>
         <td *tuiCell="'price'" tuiTd>
-        <span tuiTitle>
-          {{ item.price.value | tuiFormatNumber | async }}
-          {{ item.price.currency | tuiCurrency }}
-          <span tuiSubtitle
-          >1 лот = {{ item.lotSize }}
-            {{ item.lotSize === 1 ? "акция" : "акций" }}</span
-          >
-        </span>
+          <span tuiTitle>
+            {{ item.price.value | tuiFormatNumber | async }}
+            {{ item.price.currency | tuiCurrency }}
+            <span tuiSubtitle
+              >1 лот = {{ item.lotSize }}
+              {{ item.lotSize === 1 ? 'акция' : 'акций' }}</span
+            >
+          </span>
         </td>
         <td *tuiCell="'absolutePrice'" tuiTd>
           {{ item.earnings.absolute.value | tuiFormatNumber | async }}
         </td>
+        <td *tuiCell="'chart'" tuiTd>график</td>
       </tr>
     }
   </tbody>
