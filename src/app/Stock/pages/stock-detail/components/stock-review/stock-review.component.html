@@ -1,5 +1,24 @@
-@let stockItem = stock();
+@let stock = stock$();
+@let company = company$();
 
-<h2>О компании {{ stockItem.name }}</h2>
+<h2>О компании {{ stock.name }}</h2>
 
-<div>description</div>
+@if (company) {
+  <div>{{ company.brandInfo }}</div>
+
+  @if (company.externalLinks.main) {
+    <a [href]="company.externalLinks.main">
+      Официальный сайт компании
+    </a>
+  }
+
+  <div>
+    <p>Страна эмитента</p>
+    <p>{{ company.country }}</p>
+  </div>
+
+  <div>
+    <p>Биржа торгов</p>
+    <p>-</p>
+  </div>
+}

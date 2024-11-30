@@ -192,4 +192,8 @@ export class CompaniesService {
   public getItems(): ICompany[] {
     return this.items
   }
+
+  public getItemById(companyId: ICompany['id']): ICompany | null {
+    return this.items.find((item) => item.id === companyId) || null;
+  }
 }

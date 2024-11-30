@@ -2,6 +2,7 @@ import {Component, inject, signal, Signal} from '@angular/core';
 import {IStock} from '../../../../models/stock.models';
 import {ROUTER_OUTLET_DATA} from '@angular/router';
 import {CompaniesService} from '../../../../services/companies/companies.service';
+import {ICompany} from '../../../../models/company.models';
 
 @Component({
     selector: 'app-stock-review',
@@ -10,10 +11,17 @@ import {CompaniesService} from '../../../../services/companies/companies.service
     styleUrl: './stock-review.component.less'
 })
 export class StockReviewComponent {
-  stock = inject<Signal<IStock>>(ROUTER_OUTLET_DATA);
-  company = signal<IStock | null>(null);
+  protected stock$ = inject<Signal<IStock>>(ROUTER_OUTLET_DATA);
+  protected company$ = signal<ICompany | null>(null);
 
-  constructor(private companies: CompaniesService) {
+  constructor(
+    private companies: CompaniesService
+  ) {
+    const stock = this.stock$();
 
+    if (stock) {
+      const company = this.companies.getItemById(stock.id);
+      this.company$.set(company);
+    }
   }
 }
