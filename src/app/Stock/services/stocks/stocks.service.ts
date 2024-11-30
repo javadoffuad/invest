@@ -30,6 +30,10 @@ export class StocksService {
       },
       lotSize: 10,
       sectorId: 1,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 2,
@@ -55,6 +59,10 @@ export class StocksService {
       },
       lotSize: 1,
       sectorId: 1,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 3,
@@ -80,6 +88,10 @@ export class StocksService {
       },
       lotSize: 1,
       sectorId: 1,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 4,
@@ -105,6 +117,10 @@ export class StocksService {
       },
       lotSize: 10,
       sectorId: 3,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 5,
@@ -130,6 +146,10 @@ export class StocksService {
       },
       lotSize: 1,
       sectorId: 4,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 6,
@@ -155,6 +175,10 @@ export class StocksService {
       },
       lotSize: 1,
       sectorId: 2,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 7,
@@ -180,6 +204,10 @@ export class StocksService {
       },
       lotSize: 1,
       sectorId: 5,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 8,
@@ -205,6 +233,10 @@ export class StocksService {
       },
       lotSize: 100,
       sectorId: 5,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 9,
@@ -230,6 +262,10 @@ export class StocksService {
       },
       lotSize: 10,
       sectorId: 1,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
     {
       id: 10,
@@ -255,6 +291,10 @@ export class StocksService {
       },
       lotSize: 10,
       sectorId: 2,
+      exchangeName: 'Московская биржа',
+      exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
+      countryName: 'Россия',
+      countryLogo: 'https://invest-brands.cdn-tinkoff.ru/countries/flags/RU.png',
     },
   ];
 
@@ -265,8 +305,6 @@ export class StocksService {
   }
 
   public getStock(stockShortName: IStock['shortName']): IStock | null {
-    return (
-      this.stocks.find((stock) => stock.shortName === stockShortName) || null
-    );
+    return this.stocks.find((stock) => stock.shortName === stockShortName) || null;
   }
 }

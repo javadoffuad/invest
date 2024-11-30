@@ -3,10 +3,11 @@ import { IStock } from '../../../../models/stock.models';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
 import { CompaniesService } from '../../../../services/companies/companies.service';
 import { ICompany } from '../../../../models/company.models';
+import { TuiTitle } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-stock-review',
-  imports: [],
+  imports: [TuiTitle],
   templateUrl: './stock-review.component.html',
   styleUrl: './stock-review.component.less',
 })

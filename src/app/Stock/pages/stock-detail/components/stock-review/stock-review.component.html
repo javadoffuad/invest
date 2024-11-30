@@ -7,18 +7,20 @@
   <div>{{ company.brandInfo }}</div>
 
   @if (company.externalLinks.main) {
-    <a [href]="company.externalLinks.main">
-      Официальный сайт компании
-    </a>
+    <a [href]="company.externalLinks.main"> Официальный сайт компании </a>
   }
 
   <div>
-    <p>Страна эмитента</p>
-    <p>{{ company.country }}</p>
+    <div tuiTitle>
+      <span tuiSubtitle>Страна эмитента</span>
+      {{ stock.countryName }}
+    </div>
   </div>
 
   <div>
-    <p>Биржа торгов</p>
-    <p>-</p>
+    <div tuiTitle>
+      <span tuiSubtitle>Биржа торгов</span>
+      {{ stock.exchangeName }}
+    </div>
   </div>
 }
