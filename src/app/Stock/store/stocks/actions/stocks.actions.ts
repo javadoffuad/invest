@@ -1,11 +1,13 @@
-import { createAction, props } from '@ngrx/store';
+import { createActionGroup, emptyProps, props} from '@ngrx/store';
 import {IStock} from '../../../models/stock.models';
 
-export const loadStocks = createAction(
-  '[Stocks Page] load stocks',
-  props<{ stocks: IStock[] }>()
-);
-export const selectStock = createAction(
-  '[Stocks Page] select stock',
-  props<{ stockId: IStock['id'] }>()
-);
+export const StocksActions = createActionGroup({
+  source: 'Stocks',
+  events: {
+    'Load Stocks': emptyProps(),
+    'Load Stocks Success': props<{ stocks: IStock[] }>(),
+    'Load Stocks Failure': emptyProps(),
+
+    'Select Stock': props<{ stockId: IStock['id'] }>(),
+  }
+});
