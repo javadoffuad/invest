@@ -1,1 +1,47 @@
-{}
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "overrides": [{
+    "files": "*.html",
+    "options": {
+      "parser": "angular",
+      "printWidth": 80,
+      "bracketSameLine": true
+    }
+  },
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json",
+        "printWidth": 10,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": ["*.js", "*.ts"],
+      "options": {
+        "printWidth": 100
+      }
+    },
+    {
+      "files": ["*.less", "*.css"],
+      "options": {
+        "parser": "less",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json",
+        "printWidth": 10,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    }
+  ]
+}
+

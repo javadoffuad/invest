@@ -1,15 +1,14 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import {ActivatedRoute, RouterLink, RouterOutlet} from '@angular/router';
-import { StocksService } from '../../services/stocks.service';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { StocksService } from '../../services/stocks/stocks.service';
 import { ISector, IStock } from '../../models/stock.models';
 import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
-import { SectorsService } from '../../services/sectors.service';
+import { SectorsService } from '../../services/sectors/sectors.service';
 import { StockCardComponent } from './components/stock-card/stock-card.component';
-import { PriceCardComponent} from './components/price-card/price-card.component';
+import { PriceCardComponent } from './components/price-card/price-card.component';
 
 @Component({
   selector: 'app-stock-detail',
-  standalone: true,
   imports: [
     RouterLink,
     TuiTabsHorizontal,

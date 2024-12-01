@@ -13,6 +13,10 @@ export interface IStock {
     relative: number;
   };
   sectorId: ISector['id'];
+  exchangeName: string;
+  exchangeLogo: string;
+  countryName: string;
+  countryLogo: string;
 }
 
 export type Currency = 'USD' | 'RUB';

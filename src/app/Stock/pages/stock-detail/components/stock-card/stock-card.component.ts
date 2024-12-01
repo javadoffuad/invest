@@ -6,7 +6,6 @@ import { ISector, IStock } from '../../../../models/stock.models';
 
 @Component({
   selector: 'app-stock-card',
-  standalone: true,
   imports: [TuiAppearance, TuiAvatar, TuiCardLarge, TuiLike, TuiTitle],
   templateUrl: './stock-card.component.html',
   styleUrl: './stock-card.component.less',

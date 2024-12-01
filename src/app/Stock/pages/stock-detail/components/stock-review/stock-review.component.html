@@ -1,1 +1,26 @@
-<p>stock-review works!</p>
+@let stock = stock$();
+@let company = company$();
+
+<h2>О компании {{ stock.name }}</h2>
+
+@if (company) {
+  <div>{{ company.brandInfo }}</div>
+
+  @if (company.externalLinks.main) {
+    <a [href]="company.externalLinks.main"> Официальный сайт компании </a>
+  }
+
+  <div>
+    <div tuiTitle>
+      <span tuiSubtitle>Страна эмитента</span>
+      {{ stock.countryName }}
+    </div>
+  </div>
+
+  <div>
+    <div tuiTitle>
+      <span tuiSubtitle>Биржа торгов</span>
+      {{ stock.exchangeName }}
+    </div>
+  </div>
+}
