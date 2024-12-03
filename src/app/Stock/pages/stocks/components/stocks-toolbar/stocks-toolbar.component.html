@@ -4,25 +4,29 @@
     <select
       placeholder="Выбрать валюту"
       tuiSelect
-      [items]="currencies()"
-    ></select>
+      [items]="currencies()"></select>
   </tui-select>
 
-  <tui-select [formControl]="controlSector" [tuiTextfieldCleaner]="true" [stringify]="namedStringify">
+  <tui-select
+    tuiDropdownLimitWidth="auto"
+    [formControl]="controlSector"
+    [tuiTextfieldCleaner]="true"
+    [stringify]="namedStringify">
     Отрасль
     <select
       placeholder="Выбрать отрасль"
       tuiSelect
-      [items]="sectors()"
-    ></select>
+      [items]="sectors()"></select>
   </tui-select>
 
-  <tui-select [formControl]="controlCountry" [tuiTextfieldCleaner]="true">
+  <tui-select
+    tuiDropdownLimitWidth="auto"
+    [formControl]="controlCountry"
+    [tuiTextfieldCleaner]="true">
     Страна
     <select
       placeholder="Выбрать страну"
       tuiSelect
-      [items]="countries()"
-    ></select>
+      [items]="countries()"></select>
   </tui-select>
 </div>
