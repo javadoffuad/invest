@@ -44,7 +44,18 @@
         <td *tuiCell="'absolutePrice'" tuiTd>
           {{ item.earnings.absolute.value | tuiFormatNumber | async }}
         </td>
-        <td *tuiCell="'chart'" tuiTd>график</td>
+        <td *tuiCell="'chart'" tuiTd>
+          <tui-axes class="axes" [horizontalLines]="2" [verticalLines]="4">
+            <tui-line-chart
+              [filled]="true"
+              [height]="200"
+              [smoothingFactor]="50"
+              [value]="value"
+              [width]="400"
+              [x]="0"
+              [y]="0" />
+          </tui-axes>
+        </td>
       </tr>
     }
   </tbody>

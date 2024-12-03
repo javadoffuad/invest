@@ -15,7 +15,6 @@ import { TuiAvatar } from '@taiga-ui/kit';
 export class StockReviewComponent {
   protected stock$ = inject<Signal<IStock>>(ROUTER_OUTLET_DATA);
   protected company$ = signal<ICompany | null>(null);
-  protected country = '';
 
   constructor(private companies: CompaniesService) {
     const stock = this.stock$();
