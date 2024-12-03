@@ -45,12 +45,15 @@
           {{ item.earnings.absolute.value | tuiFormatNumber | async }}
         </td>
         <td *tuiCell="'chart'" tuiTd>
-          <tui-axes class="axes" [horizontalLines]="2" [verticalLines]="4">
+          <tui-axes
+            class="axes axes__positive"
+            [horizontalLines]="2"
+            [verticalLines]="4">
             <tui-line-chart
               [filled]="true"
-              [height]="200"
+              [height]="220"
               [smoothingFactor]="50"
-              [value]="value"
+              [value]="negativeChartValue"
               [width]="400"
               [x]="0"
               [y]="0" />

@@ -36,7 +36,16 @@ export class StocksComponent {
   protected currencies = signal(['USD', 'RUB', 'EUR']).asReadonly();
   protected countries = signal(['Russia', 'USA', 'Algeria', 'Egypt']).asReadonly();
   protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
-  protected readonly value: readonly TuiPoint[] = [
+  protected readonly negativeChartValue: readonly TuiPoint[] = [
+    [50, 50],
+    [100, 75],
+    [150, 50],
+    [200, 150],
+    [250, 155],
+    [300, 190],
+    [350, 90],
+  ];
+  protected readonly positiveChartValue: readonly TuiPoint[] = [
     [50, 50],
     [100, 75],
     [150, 50],
