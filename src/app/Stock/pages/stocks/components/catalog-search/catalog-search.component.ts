@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
+import { TuiButton } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-catalog-search',
-  imports: [RouterLink, TuiTab, TuiTabsHorizontal],
+  imports: [RouterLink, TuiButton],
   templateUrl: './catalog-search.component.html',
   styleUrl: './catalog-search.component.less',
 })
