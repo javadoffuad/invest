@@ -1,0 +1,20 @@
+<tui-tabs [(activeItemIndex)]="activeItemIndex">
+  <button tuiTab type="button" routerLink="stocks" (click)="onClick('Stocks')">
+    Акции
+  </button>
+  <button
+    tuiTab
+    type="button"
+    routerLink="currencies"
+    (click)="onClick('currencies')">
+    Валюта
+  </button>
+  <button
+    tuiTab
+    type="button"
+    routerLink="favorites"
+    (click)="onClick('Favorites')">
+    Избранные
+  </button>
+  <!--  <button tuiTab type="button" routerLink="news" (click)="onClick('News')">Новости</button>-->
+</tui-tabs>
