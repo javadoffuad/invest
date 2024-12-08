@@ -43,7 +43,9 @@ export const routes: Routes = [
       return null;
     },
     loadComponent: () =>
-      import('./Invest/invest-home/invest-home.component').then((c) => c.InvestHomeComponent),
+      import('./Invest/components/invest-home/invest-home.component').then(
+        (c) => c.InvestHomeComponent,
+      ),
     children: [
       {
         matcher: (url, segmentGroup, route) => {
