@@ -3,13 +3,13 @@ import { provideEffects } from '@ngrx/effects';
 import { StocksEffects } from './Stock/store/stocks/effects/stocks.effects';
 import { provideState } from '@ngrx/store';
 import { stocksReducer, STORE_KEY_STOCKS } from './Stock/store/stocks/reducers/stocks.reducers';
+import { matchInvestPage, matchInvestSubPage } from './utils/routes.utils';
 import {
-  matchPageCurrencies,
-  matchPageFavorites,
-  matchPageInvest,
-  matchPageRecommendations,
-  matchPageStocks,
-} from './utils/routes.utils';
+  PAGE_CURRENCIES,
+  PAGE_FAVORITES,
+  PAGE_RECOMMENDATIONS,
+  PAGE_STOCKS,
+} from './constants/invest.constants';
 
 /**
  * recommendations
@@ -25,21 +25,21 @@ import {
 
 export const investRoutes: Routes = [
   {
-    matcher: matchPageInvest,
+    matcher: matchInvestPage,
     loadComponent: () =>
       import('./components/page-wrapper/page-wrapper.component').then(
         (c) => c.PageWrapperComponent,
       ),
     children: [
       {
-        matcher: matchPageRecommendations,
+        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_RECOMMENDATIONS),
         loadComponent: () =>
           import('./Recommendations/recommendations/recommendations.component').then(
             (c) => c.RecommendationsComponent,
           ),
       },
       {
-        matcher: matchPageStocks,
+        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_STOCKS),
         providers: [
           provideEffects(StocksEffects),
           provideState({ name: STORE_KEY_STOCKS, reducer: stocksReducer }),
@@ -48,12 +48,12 @@ export const investRoutes: Routes = [
           import('./Stock/pages/stocks/stocks.component').then((c) => c.StocksComponent),
       },
       {
-        matcher: matchPageCurrencies,
+        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
         loadComponent: () =>
           import('./Currencies/currencies/currencies.component').then((c) => c.CurrenciesComponent),
       },
       {
-        matcher: matchPageFavorites,
+        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
         loadComponent: () =>
           import('./Favorites/favorites/favorites.component').then((c) => c.FavoritesComponent),
       },
