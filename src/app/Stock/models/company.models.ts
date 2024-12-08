@@ -8,7 +8,7 @@ export interface ICompany {
   country: string;
   sector: string;
   externalLinks: {
-    main?: string
+    main?: string;
   };
   tickers: string[];
 }

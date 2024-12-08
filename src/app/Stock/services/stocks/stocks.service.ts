@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IStock } from '../../models/stock.models';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -300,8 +301,8 @@ export class StocksService {
 
   constructor() {}
 
-  public getStocks() {
-    return this.stocks;
+  public getStocks(): Observable<IStock[]> {
+    return of(this.stocks);
   }
 
   public getStock(stockShortName: IStock['shortName']): IStock | null {

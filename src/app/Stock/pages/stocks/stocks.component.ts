@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, signal } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
 import { ISector, IStock } from '../../models/stock.models';
-import { StocksService } from '../../services/stocks/stocks.service';
 import { SectorsService } from '../../services/sectors/sectors.service';
 import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolbar.component';
 import { CatalogSearchComponent } from './components/catalog-search/catalog-search.component';
 import { StocksTableComponent } from './components/stocks-table/stocks-table.component';
+import { FeatureStocksService } from './services/feature-stocks/feature-stocks.service';
 
 @Component({
   selector: 'app-stocks',
@@ -13,20 +13,24 @@ import { StocksTableComponent } from './components/stocks-table/stocks-table.com
   templateUrl: './stocks.component.html',
   styleUrl: './stocks.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [FeatureStocksService],
 })
 export class StocksComponent {
   protected sectors = signal<ISector[]>([]);
-  protected stocks = signal<IStock[]>([]);
+  protected stocks: Signal<IStock[]>;
   protected currencies = signal(['USD', 'RUB', 'EUR']).asReadonly();
   protected countries = signal(['Russia', 'USA', 'Algeria', 'Egypt']).asReadonly();
 
   constructor(
-    private stocksService: StocksService,
     private activitySectorsService: SectorsService,
+    private featureStocksService: FeatureStocksService,
   ) {
-    const stocks = this.stocksService.getStocks();
     const sectors = this.activitySectorsService.getItems();
-    this.stocks.set(stocks);
     this.sectors.set(sectors);
+    this.stocks = this.featureStocksService.selectStocks();
+  }
+
+  ngOnInit() {
+    this.featureStocksService.getStocks();
   }
 }

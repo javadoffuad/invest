@@ -1,17 +1,13 @@
-import {Component, input} from '@angular/core';
-import { TuiSelectModule, TuiTextfieldControllerModule} from "@taiga-ui/legacy";
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {ISector} from '../../../../models/stock.models';
+import { Component, input } from '@angular/core';
+import { TuiSelectModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ISector } from '../../../../models/stock.models';
 
 @Component({
-    selector: 'app-stocks-toolbar',
-    imports: [
-        TuiSelectModule,
-        ReactiveFormsModule,
-        TuiTextfieldControllerModule,
-    ],
-    templateUrl: './stocks-toolbar.component.html',
-    styleUrl: './stocks-toolbar.component.less'
+  selector: 'app-stocks-toolbar',
+  imports: [TuiSelectModule, ReactiveFormsModule, TuiTextfieldControllerModule],
+  templateUrl: './stocks-toolbar.component.html',
+  styleUrl: './stocks-toolbar.component.less',
 })
 export class StocksToolbarComponent {
   countries = input.required<string[]>();
@@ -22,5 +18,5 @@ export class StocksToolbarComponent {
   protected controlCountry = new FormControl<string | null>(null);
   protected controlSector = new FormControl<string | null>(null);
 
-  protected namedStringify = (item: {name: string}) => item.name
+  protected namedStringify = (item: { name: string }) => item.name;
 }
