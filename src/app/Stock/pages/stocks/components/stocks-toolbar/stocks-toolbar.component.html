@@ -8,6 +8,7 @@
   </tui-select>
 
   <tui-select
+    tuiDropdownLimitWidth="auto"
     [formControl]="controlSector"
     [tuiTextfieldCleaner]="true"
     [stringify]="namedStringify">
@@ -18,7 +19,10 @@
       [items]="sectors()"></select>
   </tui-select>
 
-  <tui-select [formControl]="controlCountry" [tuiTextfieldCleaner]="true">
+  <tui-select
+    tuiDropdownLimitWidth="auto"
+    [formControl]="controlCountry"
+    [tuiTextfieldCleaner]="true">
     Страна
     <select
       placeholder="Выбрать страну"

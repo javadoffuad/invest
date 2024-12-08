@@ -7,7 +7,7 @@ import { ICompany } from '../../models/company.models';
 export class CompaniesService {
   private items: ICompany[] = [
     {
-      logoName: 'NL000980552.png',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/NL000980552.png',
       externalLinks: {
         main: 'https://yandex.ru/company/',
       },
