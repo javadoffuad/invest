@@ -1,0 +1,12 @@
+@let stockItems = stocks();
+
+<h2 tuiTitle="m" class="title">Каталог акций</h2>
+
+@defer {
+  <app-stocks-toolbar
+    [countries]="countries()"
+    [currencies]="currencies()"
+    [sectors]="sectors()"></app-stocks-toolbar>
+}
+
+<app-stocks-table [items]="stockItems"></app-stocks-table>
