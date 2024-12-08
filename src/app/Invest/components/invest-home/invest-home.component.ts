@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { CatalogSearchComponent } from '../catalog-search/catalog-search.component';
+import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 import { TuiInputModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
 
 @Component({
   selector: 'app-invest-home',
   imports: [
     RouterOutlet,
-    CatalogSearchComponent,
+    NavigationBarComponent,
     TuiInputModule,
     ReactiveFormsModule,
     TuiTextfieldControllerModule,

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatalogSearchComponent } from './catalog-search.component';
+import { NavigationBarComponent } from './navigation-bar.component';
 
 describe('SectionsComponent', () => {
-  let component: CatalogSearchComponent;
-  let fixture: ComponentFixture<CatalogSearchComponent>;
+  let component: NavigationBarComponent;
+  let fixture: ComponentFixture<NavigationBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CatalogSearchComponent],
+      imports: [NavigationBarComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CatalogSearchComponent);
+    fixture = TestBed.createComponent(NavigationBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
