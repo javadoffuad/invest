@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvestHomeComponent } from './invest-home.component';
+import { PageWrapperComponent } from './page-wrapper.component';
 
 describe('InvestComponent', () => {
-  let component: InvestHomeComponent;
-  let fixture: ComponentFixture<InvestHomeComponent>;
+  let component: PageWrapperComponent;
+  let fixture: ComponentFixture<PageWrapperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InvestHomeComponent],
+      imports: [PageWrapperComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InvestHomeComponent);
+    fixture = TestBed.createComponent(PageWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

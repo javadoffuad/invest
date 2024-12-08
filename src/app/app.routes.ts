@@ -29,7 +29,6 @@ export const routes: Routes = [
     loadComponent: () => import('./Home/home/home.component').then((c) => c.HomeComponent),
   },
   {
-    // recommendations, stocks, currencies, favorites
     matcher: (url) => {
       if (
         url.length === 1 &&
@@ -43,8 +42,8 @@ export const routes: Routes = [
       return null;
     },
     loadComponent: () =>
-      import('./Invest/components/invest-home/invest-home.component').then(
-        (c) => c.InvestHomeComponent,
+      import('./Invest/components/page-wrapper/page-wrapper.component').then(
+        (c) => c.PageWrapperComponent,
       ),
     children: [
       {

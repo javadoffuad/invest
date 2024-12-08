@@ -5,7 +5,7 @@ import { NavigationBarComponent } from '../navigation-bar/navigation-bar.compone
 import { TuiInputModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
 
 @Component({
-  selector: 'app-invest-home',
+  selector: 'app-page-wrapper',
   imports: [
     RouterOutlet,
     NavigationBarComponent,
@@ -13,9 +13,9 @@ import { TuiInputModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
     ReactiveFormsModule,
     TuiTextfieldControllerModule,
   ],
-  templateUrl: './invest-home.component.html',
-  styleUrl: './invest-home.component.less',
+  templateUrl: './page-wrapper.component.html',
+  styleUrl: './page-wrapper.component.less',
 })
-export class InvestHomeComponent {
+export class PageWrapperComponent {
   protected control = new FormControl<string>('');
 }
