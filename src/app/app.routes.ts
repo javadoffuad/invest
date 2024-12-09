@@ -1,48 +1,23 @@
 import { Routes } from '@angular/router';
+import { investRoutes } from './Invest/invest.routes';
+
+/**
+ * /
+ * invest routes
+ * education
+ * account
+ * login
+ */
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./Stock/pages/stocks/stocks.component').then(
-        (c) => c.StocksComponent,
-      ),
+    loadComponent: () => import('./Home/home/home.component').then((c) => c.HomeComponent),
   },
-  {
-    path: 'stocks/:name',
-    loadComponent: () =>
-      import('./Stock/pages/stock-detail/stock-detail.component').then(
-        (c) => c.StockDetailComponent,
-      ),
-    children: [
-      {
-        path: '',
-        loadComponent: () => import('./Stock/pages/stock-detail/components/stock-review/stock-review.component').then(c => c.StockReviewComponent)
-      },
-      {
-        path: 'pulse',
-        loadComponent: () => import('./Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component').then(
-          (c) => c.StockPulseComponent,
-        ),
-      },
-      {
-        path: 'dividends',
-        loadComponent: () => import('./Stock/pages/stock-detail/components/stock-dividends/stock-dividends.component').then(
-          (c) => c.StockDividendsComponent,
-        ),
-      },
-      {
-        path: 'news',
-        loadComponent: () => import('./Stock/pages/stock-detail/components/stock-news/stock-news.component').then(
-          (c) => c.StockNewsComponent,
-        ),
-      }
-    ]
-  },
+  ...investRoutes,
   {
     path: 'login',
-    loadComponent: () =>
-      import('./Login/login/login.component').then((c) => c.LoginComponent),
+    loadComponent: () => import('./Login/login/login.component').then((c) => c.LoginComponent),
   },
   {
     path: '**',

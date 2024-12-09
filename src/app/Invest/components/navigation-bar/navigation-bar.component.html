@@ -1,0 +1,47 @@
+<button
+  appearance="outline"
+  routerLinkActive
+  #recommendations="routerLinkActive"
+  tuiButton
+  type="button"
+  size="m"
+  routerLink="/recommendations"
+  [tuiAppearanceMode]="recommendations.isActive ? 'checked' : null">
+  Что купить
+</button>
+
+<button
+  appearance="outline"
+  routerLinkActive
+  #stocks="routerLinkActive"
+  tuiButton
+  type="button"
+  size="m"
+  routerLink="/stocks"
+  [tuiAppearanceMode]="stocks.isActive ? 'checked' : null">
+  Акции
+</button>
+
+<button
+  appearance="outline"
+  routerLinkActive
+  #currencies="routerLinkActive"
+  tuiButton
+  type="button"
+  size="m"
+  routerLink="/currencies"
+  [tuiAppearanceMode]="currencies.isActive ? 'checked' : null">
+  Валюта
+</button>
+
+<button
+  appearance="outline"
+  routerLinkActive
+  #favorites="routerLinkActive"
+  tuiButton
+  type="button"
+  size="m"
+  routerLink="/favorites"
+  [tuiAppearanceMode]="favorites.isActive ? 'checked' : null">
+  Избранное
+</button>
