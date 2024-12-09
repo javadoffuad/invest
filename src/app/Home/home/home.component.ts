@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { TuiTitle } from '@taiga-ui/core';
+import { TuiButton, TuiTitle } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-home',
-  imports: [TuiTitle],
+  imports: [TuiTitle, TuiButton],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
 })

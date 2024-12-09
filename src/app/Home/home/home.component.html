@@ -1,9 +1,30 @@
 <style>
   :host {
     display: flex;
+    flex-flow: column;
     padding: 30px;
-    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    margin-bottom: 10px;
+  }
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
   }
 </style>
 
 <h1 tuiTitle="l" class="title">Инвестируйте в свое будущее</h1>
+
+<p>Откройте брокерский счет за 5 минут — это бесплатно</p>
+
+<div class="buttons">
+  <button appearance="accent" tuiButton type="button">
+    Начать инвестировать
+  </button>
+
+  <button appearance="positive" tuiButton type="button">
+    Я уже инвестирую
+  </button>
+</div>
