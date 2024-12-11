@@ -20,6 +20,16 @@ export const routes: Routes = [
     loadComponent: () => import('./Login/login/login.component').then((c) => c.LoginComponent),
   },
   {
+    path: 'education',
+    loadComponent: () =>
+      import('./Education/education/education.component').then((c) => c.EducationComponent),
+  },
+  {
+    path: 'account',
+    loadComponent: () =>
+      import('./Account/account/account.component').then((c) => c.AccountComponent),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./Layouts/page-not-found/page-not-found.component').then(
