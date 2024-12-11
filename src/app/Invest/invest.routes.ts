@@ -10,6 +10,11 @@ import {
   PAGE_RECOMMENDATIONS,
   PAGE_STOCKS,
 } from './constants/invest.constants';
+import {
+  currenciesReducer,
+  STORE_KEY_CURRENCIES,
+} from './Stock/store/currencies/reducers/currencies.reducers';
+import { CurrenciesEffects } from './Stock/store/currencies/effects/currencies.effects';
 
 /**
  * recommendations
@@ -48,9 +53,13 @@ export const investRoutes: Routes = [
           import('./Stock/pages/stocks/stocks.component').then((c) => c.StocksComponent),
       },
       {
+        providers: [
+          provideEffects(CurrenciesEffects),
+          provideState({ name: STORE_KEY_CURRENCIES, reducer: currenciesReducer }),
+        ],
         matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
         loadComponent: () =>
-          import('./Currencies/currencies/currencies.component').then((c) => c.CurrenciesComponent),
+          import('./currencies/currencies/currencies.component').then((c) => c.CurrenciesComponent),
       },
       {
         matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
