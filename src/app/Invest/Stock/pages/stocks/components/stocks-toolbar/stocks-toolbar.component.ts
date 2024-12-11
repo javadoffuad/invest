@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { TuiSelectModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ISector } from '../../../../models/stock.models';
+import { ISector } from '../../../../../models/stock.models';
 
 @Component({
   selector: 'app-stocks-toolbar',

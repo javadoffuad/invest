@@ -1,7 +1,7 @@
 import { Injectable, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StocksActions } from '../../../../store/stocks/actions/stocks.actions';
-import { IStock } from '../../../../models/stock.models';
+import { IStock } from '../../../../../models/stock.models';
 import * as Selectors from '../../../../store/stocks/selectors/stocks.selectors';
 
 @Injectable()

@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { TuiAppearance, TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar, TuiLike } from '@taiga-ui/kit';
 import { TuiCardLarge } from '@taiga-ui/layout';
-import { ISector, IStock } from '../../../../models/stock.models';
+import { ISector, IStock } from '../../../../../models/stock.models';
 
 @Component({
   selector: 'app-stock-card',

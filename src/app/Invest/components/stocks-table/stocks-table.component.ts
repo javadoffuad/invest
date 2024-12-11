@@ -13,7 +13,7 @@ import {
   TuiTableThGroup,
   TuiTableTr,
 } from '@taiga-ui/addon-table';
-import { IStock } from '../../../../models/stock.models';
+import { IStock } from '../../models/stock.models';
 import { RouterLink } from '@angular/router';
 
 @Component({

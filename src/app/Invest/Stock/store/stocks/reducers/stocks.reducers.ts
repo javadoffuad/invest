@@ -1,4 +1,4 @@
-import { IStock } from '../../../models/stock.models';
+import { IStock } from '../../../../models/stock.models';
 import { createReducer, on } from '@ngrx/store';
 import { StocksActions } from '../actions/stocks.actions';
 
