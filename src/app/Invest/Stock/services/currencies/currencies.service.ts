@@ -17,7 +17,11 @@ export class CurrenciesService {
       lotSize: 1,
       exchangeName: 'Московская биржа',
       exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
-      logoName: 'USD1.png',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/USD1x160.png',
+      price: {
+        currency: 'RUB',
+        value: 89.1025,
+      },
       // "brand": "Dollar",
       earnings: {
         absolute: {
@@ -39,9 +43,13 @@ export class CurrenciesService {
       isin: 'USD000UTSTOM',
       currency: 'RUB',
       lotSize: 1,
+      price: {
+        currency: 'RUB',
+        value: 95.62,
+      },
       exchangeName: 'Московская биржа',
       exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
-      logoName: 'EUR1.png',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/EUR1x160.png',
       // "brand": "EURRUB",
       earnings: {
         absolute: {
@@ -63,9 +71,13 @@ export class CurrenciesService {
       isin: 'GBPRUB_TOM',
       currency: 'RUB',
       lotSize: 1,
+      price: {
+        currency: 'RUB',
+        value: 48,
+      },
       exchangeName: 'Московская биржа',
       exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
-      logoName: 'GBP1.png',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/GBP1x160.png',
       // "brand": "Pound sterling",
       earnings: {
         absolute: {
@@ -87,9 +99,13 @@ export class CurrenciesService {
       isin: 'CHFRUB_TOM',
       currency: 'RUB',
       lotSize: 1,
+      price: {
+        currency: 'RUB',
+        value: 90,
+      },
       exchangeName: 'Московская биржа',
       exchangeLogo: 'https://invest-brands.cdn-tinkoff.ru/exchanges/MosExchange.png',
-      logoName: 'CHF1.png',
+      logoName: 'https://invest-brands.cdn-tinkoff.ru/CHF1x160.png',
       // "brand": "Swiss frank",
       earnings: {
         absolute: {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Signal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Signal, signal } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
 import { ISector, IStock } from '../../../models/stock.models';
 import { SectorsService } from '../../services/sectors/sectors.service';
@@ -14,7 +14,7 @@ import { FeatureStocksService } from './services/feature-stocks/feature-stocks.s
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [FeatureStocksService],
 })
-export class StocksComponent {
+export class StocksComponent implements OnInit {
   protected sectors = signal<ISector[]>([]);
   protected stocks: Signal<IStock[]>;
   protected currencies = signal(['USD', 'RUB', 'EUR']).asReadonly();

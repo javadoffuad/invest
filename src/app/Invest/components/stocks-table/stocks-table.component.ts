@@ -13,8 +13,22 @@ import {
   TuiTableThGroup,
   TuiTableTr,
 } from '@taiga-ui/addon-table';
-import { IStock } from '../../models/stock.models';
+import { IPrice } from '../../models/stock.models';
 import { RouterLink } from '@angular/router';
+
+interface IDataSource {
+  id: number;
+  name: string;
+  shortName: string;
+  price: IPrice;
+  logoName: string;
+  lotSize: number;
+  earnings: {
+    absolute: IPrice;
+    previousPrice: IPrice;
+    relative: number;
+  };
+}
 
 @Component({
   selector: 'app-stocks-table',
@@ -40,7 +54,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './stocks-table.component.less',
 })
 export class StocksTableComponent {
-  items$ = input.required<IStock[]>({ alias: 'items' });
+  items$ = input.required<IDataSource[]>({ alias: 'items' });
 
   protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
   protected readonly negativeChartValue: readonly TuiPoint[] = [

@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CurrenciesActions } from '../actions/currencies.actions';
 import { catchError, EMPTY, exhaustMap, map } from 'rxjs';
-import { StocksService } from '../../../services/stocks/stocks.service';
+import { CurrenciesService } from '../../../services/currencies/currencies.service';
 
 @Injectable()
 export class CurrenciesEffects {
@@ -12,7 +12,7 @@ export class CurrenciesEffects {
     this.actions$.pipe(
       ofType(CurrenciesActions.loadCurrencies),
       exhaustMap(() =>
-        this.stocksService.getStocks().pipe(
+        this.currenciesService.getItems().pipe(
           map((items) => CurrenciesActions.loadCurrenciesSuccess({ items })),
           catchError(() => EMPTY),
         ),
@@ -20,5 +20,5 @@ export class CurrenciesEffects {
     ),
   );
 
-  constructor(private stocksService: StocksService) {}
+  constructor(private currenciesService: CurrenciesService) {}
 }

@@ -1,10 +1,10 @@
-import { IStock } from '../../../../models/stock.models';
 import { createReducer, on } from '@ngrx/store';
 import { CurrenciesActions } from '../actions/currencies.actions';
+import { ICurrency } from '../../../../models/currency.models';
 
 export interface ICurrenciesState {
-  currencies: IStock[];
-  activeCurrencyId: IStock['id'] | null;
+  currencies: ICurrency[];
+  activeCurrencyId: ICurrency['id'] | null;
   isLoadingCurrencies: boolean;
 }
 

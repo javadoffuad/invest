@@ -8,6 +8,7 @@ export interface ICurrency {
   shortName: string;
   logoName: string;
   isin: string;
+  price: IPrice;
   lotSize: number;
   earnings: {
     absolute: IPrice;

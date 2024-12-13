@@ -1,8 +1,8 @@
 import { Injectable, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CurrenciesActions } from '../../../../store/currencies/actions/currencies.actions';
-import { IStock } from '../../../../../models/stock.models';
 import * as Selectors from '../../../../store/currencies/selectors/currencies.selectors';
+import { ICurrency } from '../../../../../models/currency.models';
 
 @Injectable()
 export class FeatureCurrenciesService {
@@ -12,7 +12,7 @@ export class FeatureCurrenciesService {
     this.store.dispatch(CurrenciesActions.loadCurrencies());
   }
 
-  public selectCurrencies(): Signal<IStock[]> {
+  public selectCurrencies(): Signal<ICurrency[]> {
     return this.store.selectSignal(Selectors.selectCurrencies);
   }
 }
