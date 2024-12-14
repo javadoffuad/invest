@@ -31,7 +31,7 @@ interface IDataSource {
 }
 
 @Component({
-  selector: 'app-stocks-table',
+  selector: 'app-invest-table',
   imports: [
     AsyncPipe,
     TuiAvatar,
@@ -50,10 +50,10 @@ interface IDataSource {
     TuiTitle,
     RouterLink,
   ],
-  templateUrl: './stocks-table.component.html',
-  styleUrl: './stocks-table.component.less',
+  templateUrl: './invest-table.component.html',
+  styleUrl: './invest-table.component.less',
 })
-export class StocksTableComponent {
+export class InvestTableComponent {
   items$ = input.required<IDataSource[]>({ alias: 'items' });
 
   protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
