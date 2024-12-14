@@ -11,7 +11,7 @@
   </thead>
   <tbody tuiTbody [data]="items">
     @for (item of items; track $index) {
-      <tr [routerLink]="item.shortName" class="stock__tr" tuiTr>
+      <tr (click)="onSelect(item.shortName)" class="stock__tr" tuiTr>
         <td *tuiCell="'name'" tuiTd>
           <div class="stock__icon-badge">
             <tui-avatar [src]="item.logoName | tuiIcon" size="m" />

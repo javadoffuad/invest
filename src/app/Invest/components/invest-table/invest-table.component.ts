@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { TuiAvatar } from '@taiga-ui/kit';
 import { TuiAxes, TuiLineChart } from '@taiga-ui/addon-charts';
@@ -14,7 +14,6 @@ import {
   TuiTableTr,
 } from '@taiga-ui/addon-table';
 import { IPrice } from '../../models/stock.models';
-import { RouterLink } from '@angular/router';
 
 interface IDataSource {
   id: number;
@@ -48,13 +47,14 @@ interface IDataSource {
     TuiTableThGroup,
     TuiTableTr,
     TuiTitle,
-    RouterLink,
   ],
   templateUrl: './invest-table.component.html',
   styleUrl: './invest-table.component.less',
 })
 export class InvestTableComponent {
   items$ = input.required<IDataSource[]>({ alias: 'items' });
+
+  selectItem = output<IDataSource['shortName']>();
 
   protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
   protected readonly negativeChartValue: readonly TuiPoint[] = [
@@ -75,4 +75,8 @@ export class InvestTableComponent {
     [300, 190],
     [350, 90],
   ];
+
+  onSelect(ticker: IDataSource['shortName']): void {
+    this.selectItem.emit(ticker);
+  }
 }

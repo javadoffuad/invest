@@ -9,4 +9,6 @@
     [sectors]="sectors()"></app-stocks-toolbar>
 }
 
-<app-invest-table [items]="stockItems"></app-invest-table>
+<app-invest-table
+  [items]="stockItems"
+  (selectItem)="openStock($event)"></app-invest-table>

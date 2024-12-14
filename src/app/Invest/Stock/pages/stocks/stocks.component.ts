@@ -5,6 +5,8 @@ import { SectorsService } from '../../services/sectors/sectors.service';
 import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolbar.component';
 import { InvestTableComponent } from '../../../components/invest-table/invest-table.component';
 import { FeatureStocksService } from './services/feature-stocks/feature-stocks.service';
+import { Router } from '@angular/router';
+import { PAGE_STOCKS } from '../../../constants/invest.constants';
 
 @Component({
   selector: 'app-stocks',
@@ -21,6 +23,7 @@ export class StocksComponent implements OnInit {
   protected countries = signal(['Russia', 'USA', 'Algeria', 'Egypt']).asReadonly();
 
   constructor(
+    private router: Router,
     private activitySectorsService: SectorsService,
     private featureStocksService: FeatureStocksService,
   ) {
@@ -31,5 +34,10 @@ export class StocksComponent implements OnInit {
 
   ngOnInit() {
     this.featureStocksService.getStocks();
+  }
+
+  protected openStock(ticker: IStock['shortName']) {
+    console.log('openStock', ticker);
+    this.router.navigate([`/${PAGE_STOCKS}/` + ticker]);
   }
 }

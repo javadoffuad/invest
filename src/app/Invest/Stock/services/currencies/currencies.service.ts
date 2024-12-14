@@ -10,7 +10,7 @@ export class CurrenciesService {
     {
       id: 1,
       name: 'Доллар США',
-      shortName: '',
+      shortName: 'USDRUB',
       symbolType: 'Currency',
       isin: 'USD000UTSTOM',
       currency: 'RUB',
