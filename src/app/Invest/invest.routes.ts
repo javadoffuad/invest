@@ -21,7 +21,7 @@ import { CurrenciesEffects } from './Stock/store/currencies/effects/currencies.e
  * stocks
  * currencies
  * favorites
- * stock-detail:name
+ * stock-detail:ticker
  *    review
  *    pulse
  *    dividends
@@ -69,7 +69,44 @@ export const investRoutes: Routes = [
     ],
   },
   {
-    path: 'stocks/:name',
+    path: `${PAGE_STOCKS}/:ticker`,
+    loadComponent: () =>
+      import('./Stock/pages/stock-detail/stock-detail.component').then(
+        (c) => c.StockDetailComponent,
+      ),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./Stock/pages/stock-detail/components/stock-review/stock-review.component').then(
+            (c) => c.StockReviewComponent,
+          ),
+      },
+      {
+        path: 'pulse',
+        loadComponent: () =>
+          import('./Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component').then(
+            (c) => c.StockPulseComponent,
+          ),
+      },
+      {
+        path: 'dividends',
+        loadComponent: () =>
+          import(
+            './Stock/pages/stock-detail/components/stock-dividends/stock-dividends.component'
+          ).then((c) => c.StockDividendsComponent),
+      },
+      {
+        path: 'news',
+        loadComponent: () =>
+          import('./Stock/pages/stock-detail/components/stock-news/stock-news.component').then(
+            (c) => c.StockNewsComponent,
+          ),
+      },
+    ],
+  },
+  {
+    path: `${PAGE_CURRENCIES}/:ticker`,
     loadComponent: () =>
       import('./Stock/pages/stock-detail/stock-detail.component').then(
         (c) => c.StockDetailComponent,
