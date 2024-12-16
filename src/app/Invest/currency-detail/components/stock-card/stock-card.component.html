@@ -1,12 +1,15 @@
-@let stockItem = stock();
+@let _brandName = brandName();
+@let _brandLogo = brandLogo();
+@let _sectorName = sectorName();
+@let _ticker = ticker();
 
 <div class="stock" tuiAppearance="floating" tuiCardLarge>
   <div class="stock__sprite">
     <div class="stock__section stock__section_left">
       <div class="stock__name-wrap">
         <h1 tuiTitle="l">
-          {{ stockItem.name }}
-          <span tuiSubtitle>{{ stockItem.shortName }}</span>
+          {{ _brandName }}
+          <span tuiSubtitle>{{ _ticker }}</span>
         </h1>
       </div>
       <div class="stock__extra-info">
@@ -14,10 +17,12 @@
           <span tuiSubtitle>Доходность за полгода</span>
           −10,75%
         </div>
-        <div tuiTitle>
-          <span tuiSubtitle>Сектор</span>
-          {{ sectorName() }}
-        </div>
+        @if (_sectorName) {
+          <div tuiTitle>
+            <span tuiSubtitle>Сектор</span>
+            {{ _sectorName }}
+          </div>
+        }
       </div>
     </div>
     <div class="stock__logo-wrap">
@@ -25,7 +30,7 @@
         class="stock__logo"
         appearance="primary"
         size="xxl"
-        [src]="stockItem.logoName" />
+        [src]="_brandLogo" />
       <input
         size="m"
         tuiLike

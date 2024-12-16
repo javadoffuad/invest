@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { StocksService } from '../../services/stocks/stocks.service';
 import { ISector, IStock } from '../../../models/stock.models';
@@ -21,7 +21,7 @@ import { PriceCardComponent } from './components/price-card/price-card.component
   styleUrl: './stock-detail.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StockDetailComponent {
+export class StockDetailComponent implements OnInit {
   protected stock = signal<IStock | null>(null);
   protected sectorName = signal<ISector['name'] | null>(null);
   protected activeItemIndex = 0;
@@ -33,7 +33,7 @@ export class StockDetailComponent {
   ) {}
 
   ngOnInit() {
-    const stockShortName = this.route.snapshot.paramMap.get('name') ?? '';
+    const stockShortName = this.route.snapshot.paramMap.get('ticker') ?? '';
     const stock = this.stocksService.getStock(stockShortName);
 
     if (stock) {

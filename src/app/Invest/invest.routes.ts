@@ -108,9 +108,7 @@ export const investRoutes: Routes = [
   {
     path: `${PAGE_CURRENCIES}/:ticker`,
     loadComponent: () =>
-      import('./Stock/pages/stock-detail/stock-detail.component').then(
-        (c) => c.StockDetailComponent,
-      ),
+      import('./currency-detail/currency-detail.component').then((c) => c.CurrencyDetailComponent),
     children: [
       {
         path: '',
@@ -125,13 +123,6 @@ export const investRoutes: Routes = [
           import('./Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component').then(
             (c) => c.StockPulseComponent,
           ),
-      },
-      {
-        path: 'dividends',
-        loadComponent: () =>
-          import(
-            './Stock/pages/stock-detail/components/stock-dividends/stock-dividends.component'
-          ).then((c) => c.StockDividendsComponent),
       },
       {
         path: 'news',

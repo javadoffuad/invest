@@ -15,14 +15,15 @@
   }
 </style>
 
-@let stockItem = stock();
-@let stockSectorName = sectorName();
+@let _currency = currency();
 
-@if (stockItem) {
+@if (_currency) {
   <div class="main-container">
     @defer {
-      <app-stock-card [sectorName]="stockSectorName" [stock]="stockItem">
-      </app-stock-card>
+      <app-stock-card
+        [brandName]="_currency.name"
+        [brandLogo]="_currency.logoName"
+        [ticker]="_currency.shortName" />
     }
 
     <div class="info">
@@ -30,7 +31,7 @@
         <button
           tuiTab
           type="button"
-          [routerLink]="'/stocks/' + stockItem.shortName"
+          [routerLink]="'/stocks/' + _currency.shortName"
           (click)="onClick('Review')">
           Обзор
         </button>
@@ -44,26 +45,19 @@
         <button
           tuiTab
           type="button"
-          routerLink="dividends"
-          (click)="onClick('Dividends')">
-          Дивиденды
-        </button>
-        <button
-          tuiTab
-          type="button"
           routerLink="news"
           (click)="onClick('News')">
           Новости
         </button>
       </tui-tabs>
 
-      <router-outlet [routerOutletData]="stock()"></router-outlet>
+      <router-outlet [routerOutletData]="currency()"></router-outlet>
     </div>
   </div>
 
   <div class="sidebar">
     @defer {
-      <app-price-card [price]="stockItem.price"></app-price-card>
+      <app-price-card [price]="_currency.price"></app-price-card>
     }
   </div>
 }

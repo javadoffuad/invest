@@ -3,8 +3,8 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 import { TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle } from '@taiga-ui/core';
 import { TuiCardLarge } from '@taiga-ui/layout';
 import { TuiCurrencyPipe } from '@taiga-ui/addon-commerce';
-import { IPrice } from '../../../../../models/stock.models';
 import { RouterLink } from '@angular/router';
+import { IPrice } from '../../models/stock.models';
 
 @Component({
   selector: 'app-price-card',
