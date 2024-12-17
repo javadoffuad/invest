@@ -1,0 +1,41 @@
+<style>
+  .company-link {
+    display: inline-block;
+    margin-top: 12px;
+  }
+  .exchange {
+    display: flex;
+    gap: 70px;
+    margin-top: 24px;
+  }
+</style>
+
+@let currency = currency$();
+
+<h2>О валюте {{ currency.name }}</h2>
+
+<div class="exchange">
+  <!--    <div tuiTitle>-->
+  <!--      <span tuiSubtitle>Страна эмитента</span>-->
+  <!--      <div>-->
+  <!--        <tui-avatar-->
+  <!--          class="stock__logo"-->
+  <!--          appearance="primary"-->
+  <!--          size="xs"-->
+  <!--          [src]="currency.countryLogo" />-->
+  <!--        {{ currency.countryName }}-->
+  <!--      </div>-->
+  <!--    </div>-->
+
+  <div tuiTitle>
+    <span tuiSubtitle>Биржа торгов</span>
+    <div>
+      <tui-avatar
+        class="stock__logo"
+        appearance="primary"
+        size="xs"
+        [src]="currency.exchangeLogo" />
+      {{ currency.exchangeName }}
+    </div>
+  </div>
+</div>

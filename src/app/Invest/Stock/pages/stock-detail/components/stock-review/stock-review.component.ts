@@ -7,7 +7,7 @@ import { TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar } from '@taiga-ui/kit';
 
 @Component({
-  selector: 'app-stock-review',
+  selector: 'app-currency-review',
   imports: [TuiTitle, TuiAvatar],
   templateUrl: './stock-review.component.html',
   styleUrl: './stock-review.component.less',
