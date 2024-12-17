@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StockNewsComponent } from './stock-news.component';
+import { CurrencyNewsComponent } from './currency-news.component';
 
 describe('StockNewsComponent', () => {
-  let component: StockNewsComponent;
-  let fixture: ComponentFixture<StockNewsComponent>;
+  let component: CurrencyNewsComponent;
+  let fixture: ComponentFixture<CurrencyNewsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StockNewsComponent],
+      imports: [CurrencyNewsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StockNewsComponent);
+    fixture = TestBed.createComponent(CurrencyNewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

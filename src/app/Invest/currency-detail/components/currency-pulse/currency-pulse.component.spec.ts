@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StockPulseComponent } from './stock-pulse.component';
+import { CurrencyPulseComponent } from './currency-pulse.component';
 
 describe('StockPulseComponent', () => {
-  let component: StockPulseComponent;
-  let fixture: ComponentFixture<StockPulseComponent>;
+  let component: CurrencyPulseComponent;
+  let fixture: ComponentFixture<CurrencyPulseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StockPulseComponent],
+      imports: [CurrencyPulseComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StockPulseComponent);
+    fixture = TestBed.createComponent(CurrencyPulseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

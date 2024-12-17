@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-stock-pulse',
+  selector: 'app-currency-pulse',
   imports: [],
   templateUrl: './stock-pulse.component.html',
   styleUrl: './stock-pulse.component.less',

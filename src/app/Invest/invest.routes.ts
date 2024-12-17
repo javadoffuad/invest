@@ -113,22 +113,22 @@ export const investRoutes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-review/stock-review.component').then(
-            (c) => c.StockReviewComponent,
+          import('./currency-detail/components/currency-review/currency-review.component').then(
+            (c) => c.CurrencyReviewComponent,
           ),
       },
       {
         path: 'pulse',
         loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component').then(
-            (c) => c.StockPulseComponent,
+          import('./currency-detail/components/currency-pulse/currency-pulse.component').then(
+            (c) => c.CurrencyPulseComponent,
           ),
       },
       {
         path: 'news',
         loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-news/stock-news.component').then(
-            (c) => c.StockNewsComponent,
+          import('./currency-detail/components/currency-news/currency-news.component').then(
+            (c) => c.CurrencyNewsComponent,
           ),
       },
     ],
