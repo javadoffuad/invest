@@ -5,7 +5,7 @@ import { TuiCardLarge } from '@taiga-ui/layout';
 import { ISector, IStock } from '../../../../../models/stock.models';
 
 @Component({
-  selector: 'app-currency-card',
+  selector: 'app-stock-card',
   imports: [TuiAppearance, TuiAvatar, TuiCardLarge, TuiLike, TuiTitle],
   templateUrl: './stock-card.component.html',
   styleUrl: './stock-card.component.less',
