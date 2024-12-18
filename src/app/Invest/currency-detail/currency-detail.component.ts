@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
-import { StockCardComponent } from './components/stock-card/stock-card.component';
 import { ICurrency } from '../models/currency.models';
 import { CurrenciesService } from '../Stock/services/currencies/currencies.service';
 import { PriceCardComponent } from '../components/price-card/price-card.component';
+import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
 
 @Component({
   selector: 'app-currency-detail',
@@ -12,9 +12,9 @@ import { PriceCardComponent } from '../components/price-card/price-card.componen
     RouterLink,
     TuiTabsHorizontal,
     TuiTab,
-    StockCardComponent,
     PriceCardComponent,
     RouterOutlet,
+    CurrencyCardComponent,
   ],
   templateUrl: './currency-detail.component.html',
   styleUrl: './currency-detail.component.less',
