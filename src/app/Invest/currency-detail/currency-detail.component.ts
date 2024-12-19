@@ -5,6 +5,7 @@ import { ICurrency } from '../models/currency.models';
 import { CurrenciesService } from '../Stock/services/currencies/currencies.service';
 import { PriceCardComponent } from '../components/price-card/price-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
+import { PAGE_CURRENCIES } from '../constants/invest.constants';
 
 @Component({
   selector: 'app-currency-detail',
@@ -21,6 +22,7 @@ import { CurrencyCardComponent } from './components/currency-card/currency-card.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrencyDetailComponent implements OnInit {
+  protected readonly currenciesPage = PAGE_CURRENCIES;
   protected currency = signal<ICurrency | null>(null);
   protected activeItemIndex = 0;
 

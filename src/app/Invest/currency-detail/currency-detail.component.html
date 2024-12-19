@@ -31,7 +31,7 @@
         <button
           tuiTab
           type="button"
-          [routerLink]="'/currencies/' + _currency.shortName"
+          [routerLink]="'/' + currenciesPage + '/' + _currency.shortName"
           (click)="onClick('Review')">
           Обзор
         </button>

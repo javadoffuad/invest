@@ -30,7 +30,7 @@
         <button
           tuiTab
           type="button"
-          [routerLink]="'/stocks/' + stockItem.shortName"
+          [routerLink]="'/' + stocksPage + '/' + stockItem.shortName"
           (click)="onClick('Review')">
           Обзор
         </button>

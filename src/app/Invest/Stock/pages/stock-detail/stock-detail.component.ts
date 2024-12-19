@@ -6,6 +6,7 @@ import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
 import { SectorsService } from '../../services/sectors/sectors.service';
 import { StockCardComponent } from './components/stock-card/stock-card.component';
 import { PriceCardComponent } from './components/price-card/price-card.component';
+import { PAGE_STOCKS } from '../../../constants/invest.constants';
 
 @Component({
   selector: 'app-stock-detail',
@@ -22,6 +23,7 @@ import { PriceCardComponent } from './components/price-card/price-card.component
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StockDetailComponent implements OnInit {
+  protected readonly stocksPage = PAGE_STOCKS;
   protected stock = signal<IStock | null>(null);
   protected sectorName = signal<ISector['name'] | null>(null);
   protected activeItemIndex = 0;
