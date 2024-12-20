@@ -6,9 +6,11 @@ import { stocksReducer, STORE_KEY_STOCKS } from './Stock/store/stocks/reducers/s
 import { matchInvestPage, matchInvestSubPage } from './utils/routes.utils';
 import {
   PAGE_CURRENCIES,
+  PAGE_CURRENCIES_PARAM,
   PAGE_FAVORITES,
   PAGE_RECOMMENDATIONS,
   PAGE_STOCKS,
+  PAGE_STOCKS_PARAM,
 } from './constants/invest.constants';
 import {
   currenciesReducer,
@@ -69,7 +71,7 @@ export const investRoutes: Routes = [
     ],
   },
   {
-    path: `${PAGE_STOCKS}/:ticker`,
+    path: `${PAGE_STOCKS}/:${PAGE_STOCKS_PARAM}`,
     loadComponent: () =>
       import('./Stock/pages/stock-detail/stock-detail.component').then(
         (c) => c.StockDetailComponent,
@@ -106,7 +108,7 @@ export const investRoutes: Routes = [
     ],
   },
   {
-    path: `${PAGE_CURRENCIES}/:ticker`,
+    path: `${PAGE_CURRENCIES}/:${PAGE_CURRENCIES_PARAM}`,
     loadComponent: () =>
       import('./currency-detail/currency-detail.component').then((c) => c.CurrencyDetailComponent),
     children: [

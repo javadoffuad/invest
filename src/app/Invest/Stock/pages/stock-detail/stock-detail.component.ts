@@ -6,7 +6,7 @@ import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
 import { SectorsService } from '../../services/sectors/sectors.service';
 import { StockCardComponent } from './components/stock-card/stock-card.component';
 import { PriceCardComponent } from './components/price-card/price-card.component';
-import { PAGE_STOCKS } from '../../../constants/invest.constants';
+import { PAGE_STOCKS, PAGE_STOCKS_PARAM } from '../../../constants/invest.constants';
 
 @Component({
   selector: 'app-stock-detail',
@@ -35,7 +35,7 @@ export class StockDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const stockShortName = this.route.snapshot.paramMap.get('ticker') ?? '';
+    const stockShortName = this.route.snapshot.paramMap.get(PAGE_STOCKS_PARAM) ?? '';
     const stock = this.stocksService.getStock(stockShortName);
 
     if (stock) {

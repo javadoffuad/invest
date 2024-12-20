@@ -5,7 +5,7 @@ import { ICurrency } from '../models/currency.models';
 import { CurrenciesService } from '../Stock/services/currencies/currencies.service';
 import { PriceCardComponent } from '../components/price-card/price-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
-import { PAGE_CURRENCIES } from '../constants/invest.constants';
+import { PAGE_CURRENCIES, PAGE_CURRENCIES_PARAM } from '../constants/invest.constants';
 
 @Component({
   selector: 'app-currency-detail',
@@ -32,7 +32,7 @@ export class CurrencyDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const ticker = this.route.snapshot.paramMap.get('ticker') ?? '';
+    const ticker = this.route.snapshot.paramMap.get(PAGE_CURRENCIES_PARAM) ?? '';
     const currency = this.currenciesService.getItem(ticker);
     this.currency.set(currency);
   }
