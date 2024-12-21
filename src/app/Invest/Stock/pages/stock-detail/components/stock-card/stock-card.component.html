@@ -33,7 +33,8 @@
         class="stock__star"
         appearance="info"
         [checkedIcon]="'@tui.star-filled'"
-        [uncheckedIcon]="'@tui.star'" />
+        [uncheckedIcon]="'@tui.star'"
+        (click)="favorite($event)" />
     </div>
   </div>
 </div>

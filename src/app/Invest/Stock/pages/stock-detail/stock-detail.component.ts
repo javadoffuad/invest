@@ -48,4 +48,8 @@ export class StockDetailComponent implements OnInit {
   onClick(sectionName: string) {
     console.log('click', sectionName);
   }
+
+  toggleFavorite(stockId: number): void {
+    console.log('toggleFavorite', stockId);
+  }
 }

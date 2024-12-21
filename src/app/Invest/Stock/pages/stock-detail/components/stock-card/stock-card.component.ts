@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TuiAppearance, TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar, TuiLike } from '@taiga-ui/kit';
 import { TuiCardLarge } from '@taiga-ui/layout';
@@ -13,4 +13,10 @@ import { ISector, IStock } from '../../../../../models/stock.models';
 export class StockCardComponent {
   public stock = input.required<IStock>();
   public sectorName = input.required<ISector['name'] | null>();
+
+  toggleFavorite = output<number>();
+
+  favorite(event: any): void {
+    this.toggleFavorite.emit(this.stock().id);
+  }
 }

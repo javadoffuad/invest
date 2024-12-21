@@ -21,8 +21,10 @@
 @if (stockItem) {
   <div class="main-container">
     @defer {
-      <app-stock-card [sectorName]="stockSectorName" [stock]="stockItem">
-      </app-stock-card>
+      <app-stock-card
+        [sectorName]="stockSectorName"
+        [stock]="stockItem"
+        (toggleFavorite)="toggleFavorite($event)" />
     }
 
     <div class="info">
