@@ -130,4 +130,12 @@ export class CurrenciesService {
   public getItem(shortName: ICurrency['shortName']): ICurrency | null {
     return this.items.find((stock) => stock.shortName === shortName) || null;
   }
+
+  public setItem(currency: ICurrency): void {
+    const index = this.items.findIndex((stock) => stock.id === currency.id);
+
+    if (index >= 0) {
+      this.items.splice(index, 1, currency);
+    }
+  }
 }
