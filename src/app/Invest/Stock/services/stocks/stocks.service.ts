@@ -308,4 +308,12 @@ export class StocksService {
   public getStock(stockShortName: IStock['shortName']): IStock | null {
     return this.stocks.find((stock) => stock.shortName === stockShortName) || null;
   }
+
+  public setStock(stock: IStock): void {
+    const index = this.stocks.findIndex((stock) => stock.id === stock.id);
+
+    if (index > -1) {
+      this.stocks.splice(index, 1, stock);
+    }
+  }
 }
