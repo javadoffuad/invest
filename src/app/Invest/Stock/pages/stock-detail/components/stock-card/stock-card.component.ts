@@ -14,9 +14,9 @@ export class StockCardComponent {
   public stock = input.required<IStock>();
   public sectorName = input.required<ISector['name'] | null>();
 
-  toggleFavorite = output<number>();
+  toggleFavorite = output<IStock>();
 
   favorite(event: any): void {
-    this.toggleFavorite.emit(this.stock().id);
+    this.toggleFavorite.emit(this.stock());
   }
 }

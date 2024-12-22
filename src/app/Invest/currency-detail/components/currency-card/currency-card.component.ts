@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TuiAppearance, TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar, TuiLike } from '@taiga-ui/kit';
 import { TuiCardLarge } from '@taiga-ui/layout';
@@ -10,8 +10,14 @@ import { TuiCardLarge } from '@taiga-ui/layout';
   styleUrl: './currency-card.component.less',
 })
 export class CurrencyCardComponent {
-  public brandName = input.required<string>();
-  public ticker = input.required<string>();
-  public brandLogo = input.required<string>();
-  public sectorName = input<string>();
+  brandName = input.required<string>();
+  ticker = input.required<string>();
+  brandLogo = input.required<string>();
+  sectorName = input<string>();
+
+  toggleFavorite = output<string>();
+
+  favorite(event: any): void {
+    this.toggleFavorite.emit(this.ticker());
+  }
 }
