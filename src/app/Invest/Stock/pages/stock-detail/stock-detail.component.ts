@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
-import { StocksService } from '../../services/stocks/stocks.service';
 import { ISector, IStock } from '../../../models/stock.models';
 import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
 import { SectorsService } from '../../services/sectors/sectors.service';
 import { StockCardComponent } from './components/stock-card/stock-card.component';
 import { PriceCardComponent } from './components/price-card/price-card.component';
 import { PAGE_STOCKS, PAGE_STOCKS_PARAM } from '../../../constants/invest.constants';
+import { FeatureStocksService } from '../stocks/services/feature-stocks/feature-stocks.service';
 
 @Component({
   selector: 'app-stock-detail',
@@ -21,6 +21,7 @@ import { PAGE_STOCKS, PAGE_STOCKS_PARAM } from '../../../constants/invest.consta
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [FeatureStocksService],
 })
 export class StockDetailComponent implements OnInit {
   protected readonly stocksPage = PAGE_STOCKS;
@@ -30,13 +31,13 @@ export class StockDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private stocksService: StocksService,
     private sectorsService: SectorsService,
+    private featureStocksService: FeatureStocksService,
   ) {}
 
   ngOnInit() {
-    const stockShortName = this.route.snapshot.paramMap.get(PAGE_STOCKS_PARAM) ?? '';
-    const stock = this.stocksService.getStock(stockShortName);
+    const ticker = this.route.snapshot.paramMap.get(PAGE_STOCKS_PARAM) ?? '';
+    const stock = this.featureStocksService.selectStockByTicker(ticker)();
 
     if (stock) {
       const sector = this.sectorsService.getItemByCode(stock.sector);
@@ -51,6 +52,6 @@ export class StockDetailComponent implements OnInit {
 
   toggleFavorite(stock: IStock): void {
     console.log('toggleFavorite', stock);
-    this.stocksService.setStock({ ...stock });
+    this.featureStocksService.setStock({ ...stock });
   }
 }

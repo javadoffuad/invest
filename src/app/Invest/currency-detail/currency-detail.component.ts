@@ -6,7 +6,6 @@ import { CurrenciesService } from '../Stock/services/currencies/currencies.servi
 import { PriceCardComponent } from '../components/price-card/price-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
 import { PAGE_CURRENCIES, PAGE_CURRENCIES_PARAM } from '../constants/invest.constants';
-import { IStock } from '../models/stock.models';
 
 @Component({
   selector: 'app-currency-detail',

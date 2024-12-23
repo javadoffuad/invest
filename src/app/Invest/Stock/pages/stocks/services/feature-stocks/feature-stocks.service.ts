@@ -12,7 +12,15 @@ export class FeatureStocksService {
     this.store.dispatch(StocksActions.loadStocks());
   }
 
+  public setStock(stock: IStock): void {
+    this.store.dispatch(StocksActions.setStock({ stock }));
+  }
+
   public selectStocks(): Signal<IStock[]> {
     return this.store.selectSignal(Selectors.selectStocks);
+  }
+
+  public selectStockByTicker(ticker: string): Signal<IStock | null> {
+    return this.store.selectSignal(Selectors.selectStockByTicker(ticker));
   }
 }

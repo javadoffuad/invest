@@ -24,10 +24,10 @@ export class StocksComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activitySectorsService: SectorsService,
+    private sectorsService: SectorsService,
     private featureStocksService: FeatureStocksService,
   ) {
-    const sectors = this.activitySectorsService.getItems();
+    const sectors = this.sectorsService.getItems();
     this.sectors.set(sectors);
     this.stocks = this.featureStocksService.selectStocks();
   }

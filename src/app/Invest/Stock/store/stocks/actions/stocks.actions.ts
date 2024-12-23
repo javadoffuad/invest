@@ -9,5 +9,7 @@ export const StocksActions = createActionGroup({
     'Load Stocks Failure': emptyProps(),
 
     'Select Stock': props<{ stockId: IStock['id'] }>(),
+
+    'Set Stock': props<{ stock: IStock }>(),
   },
 });

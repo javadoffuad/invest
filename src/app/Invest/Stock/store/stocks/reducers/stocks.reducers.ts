@@ -35,4 +35,13 @@ export const stocksReducer = createReducer(
     ...state,
     activeStockId: action.stockId,
   })),
+  on(StocksActions.setStock, (state, { stock }) => {
+    const newStocks = [...state.stocks];
+    newStocks.splice(newStocks.indexOf(stock), 1, stock);
+
+    return {
+      ...state,
+      stocks: newStocks,
+    };
+  }),
 );
