@@ -13,6 +13,7 @@ export class CurrenciesService {
       shortName: 'USDRUB',
       symbolType: 'Currency',
       isin: 'USD000UTSTOM',
+      isFavorite: false,
       currency: 'RUB',
       lotSize: 1,
       exchangeName: 'Московская биржа',
@@ -41,6 +42,7 @@ export class CurrenciesService {
       shortName: 'EURRUB',
       symbolType: 'Currency',
       isin: 'USD000UTSTOM',
+      isFavorite: false,
       currency: 'RUB',
       lotSize: 1,
       price: {
@@ -69,6 +71,7 @@ export class CurrenciesService {
       shortName: 'GBPRUB',
       symbolType: 'Currency',
       isin: 'GBPRUB_TOM',
+      isFavorite: false,
       currency: 'RUB',
       lotSize: 1,
       price: {
@@ -97,6 +100,7 @@ export class CurrenciesService {
       shortName: 'CHFRUB',
       symbolType: 'Currency',
       isin: 'CHFRUB_TOM',
+      isFavorite: false,
       currency: 'RUB',
       lotSize: 1,
       price: {

@@ -8,6 +8,7 @@ export interface ICurrency {
   shortName: string;
   logoName: string;
   isin: string;
+  isFavorite: boolean;
   price: IPrice;
   lotSize: number;
   earnings: {
