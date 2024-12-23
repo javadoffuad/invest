@@ -16,7 +16,7 @@ export class StockCardComponent {
 
   toggleFavorite = output<IStock>();
 
-  favorite(event: any): void {
-    this.toggleFavorite.emit(this.stock());
+  favorite(stock: IStock): void {
+    this.toggleFavorite.emit({ ...stock, isFavorite: !stock.isFavorite });
   }
 }

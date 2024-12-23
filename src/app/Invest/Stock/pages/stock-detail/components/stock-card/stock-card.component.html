@@ -28,13 +28,14 @@
         [src]="stockItem.logoName" />
       <input
         size="m"
-        tuiLike
+        [tuiLike]="'gold'"
         type="checkbox"
         class="stock__star"
         appearance="info"
+        [checked]="stockItem.isFavorite"
         [checkedIcon]="'@tui.star-filled'"
         [uncheckedIcon]="'@tui.star'"
-        (click)="favorite($event)" />
+        (change)="favorite(stockItem)" />
     </div>
   </div>
 </div>

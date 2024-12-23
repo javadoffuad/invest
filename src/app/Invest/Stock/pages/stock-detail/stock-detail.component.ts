@@ -51,6 +51,6 @@ export class StockDetailComponent implements OnInit {
   }
 
   toggleFavorite(stock: IStock): void {
-    this.featureStocksService.setStock({ ...stock });
+    this.featureStocksService.setStock(stock);
   }
 }
