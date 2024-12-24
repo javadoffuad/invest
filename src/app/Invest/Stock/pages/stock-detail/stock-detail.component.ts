@@ -27,7 +27,7 @@ export class StockDetailComponent implements OnInit {
   protected readonly stocksPage = PAGE_STOCKS;
   protected stock = signal<IStock | null>(null);
   protected sectorName = signal<ISector['name'] | null>(null);
-  protected activeItemIndex = 0;
+  protected activeTabIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
