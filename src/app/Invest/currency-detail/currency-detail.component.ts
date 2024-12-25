@@ -6,6 +6,7 @@ import { CurrenciesService } from '../Stock/services/currencies/currencies.servi
 import { PriceCardComponent } from '../components/price-card/price-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
 import { PAGE_CURRENCIES, PAGE_CURRENCIES_PARAM } from '../constants/invest.constants';
+import { FeatureCurrenciesService } from '../Stock/pages/stocks/services/feature-currencies/feature-currencies.service';
 
 @Component({
   selector: 'app-currency-detail',
@@ -29,6 +30,7 @@ export class CurrencyDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private currenciesService: CurrenciesService,
+    private featureCurrenciesService: FeatureCurrenciesService,
   ) {}
 
   ngOnInit() {
@@ -41,7 +43,7 @@ export class CurrencyDetailComponent implements OnInit {
     console.log('click', sectionName);
   }
 
-  toggleFavorite(ticker: string): void {
-    console.log('toggleFavorite', ticker);
+  toggleFavorite(currency: ICurrency): void {
+    this.featureCurrenciesService.setCurrency({ ...currency, isFavorite: !currency.isFavorite });
   }
 }

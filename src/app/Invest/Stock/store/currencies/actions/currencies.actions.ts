@@ -9,5 +9,6 @@ export const CurrenciesActions = createActionGroup({
     'Load Currencies Failure': emptyProps(),
 
     'Select Currency': props<{ itemId: ICurrency['id'] }>(),
+    'Set Currency': props<{ item: ICurrency }>(),
   },
 });

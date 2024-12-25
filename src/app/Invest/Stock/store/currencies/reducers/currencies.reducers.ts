@@ -35,4 +35,13 @@ export const currenciesReducer = createReducer(
     ...state,
     activeCurrencyId: action.itemId,
   })),
+  on(CurrenciesActions.setCurrency, (state, { item }) => {
+    const newCurrencies = [...state.currencies];
+    newCurrencies.splice(newCurrencies.indexOf(item), 1, item);
+
+    return {
+      ...state,
+      currencies: newCurrencies,
+    };
+  }),
 );
