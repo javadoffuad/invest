@@ -19,4 +19,8 @@ export class FeatureCurrenciesService {
   public selectCurrencies(): Signal<ICurrency[]> {
     return this.store.selectSignal(Selectors.selectCurrencies);
   }
+
+  public selectCurrencyByTicker(ticker: string): Signal<ICurrency | null> {
+    return this.store.selectSignal(Selectors.selectCurrencyByTicker(ticker));
+  }
 }
