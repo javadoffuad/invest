@@ -27,7 +27,7 @@ export class CurrenciesComponent {
     this.featureCurrenciesService.getCurrencies();
   }
 
-  protected openCurrency(ticker: ICurrency['shortName']): void {
+  protected openCurrency(ticker: ICurrency['ticker']): void {
     this.router.navigate([`/${PAGE_CURRENCIES}/` + ticker]);
   }
 }
