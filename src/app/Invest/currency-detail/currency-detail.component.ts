@@ -25,7 +25,7 @@ import { FeatureCurrenciesService } from '../Stock/pages/stocks/services/feature
 export class CurrencyDetailComponent implements OnInit {
   protected readonly currenciesPage = PAGE_CURRENCIES;
   protected currency = signal<ICurrency | null>(null);
-  protected activeItemIndex = 0;
+  protected activeTabIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
