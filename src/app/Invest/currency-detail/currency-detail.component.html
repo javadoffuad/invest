@@ -23,7 +23,7 @@
       <app-currency-card
         [brandName]="_currency.name"
         [brandLogo]="_currency.logoName"
-        [ticker]="_currency.shortName"
+        [ticker]="_currency.ticker"
         (toggleFavorite)="toggleFavorite(_currency)" />
     }
 
@@ -32,7 +32,7 @@
         <button
           tuiTab
           type="button"
-          [routerLink]="'/' + currenciesPage + '/' + _currency.shortName"
+          [routerLink]="'/' + currenciesPage + '/' + _currency.ticker"
           (click)="onClick('Review')">
           Обзор
         </button>

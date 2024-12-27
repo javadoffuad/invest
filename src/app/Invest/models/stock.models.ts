@@ -1,7 +1,7 @@
 export interface IStock {
   id: number;
   name: string;
-  shortName: string;
+  ticker: string;
   logoName: string;
   isin: string;
   isFavorite: boolean;

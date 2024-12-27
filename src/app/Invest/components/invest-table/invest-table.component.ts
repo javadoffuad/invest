@@ -18,7 +18,7 @@ import { IPrice } from '../../models/stock.models';
 interface IDataSource {
   id: number;
   name: string;
-  shortName: string;
+  ticker: string;
   price: IPrice;
   logoName: string;
   lotSize: number;
@@ -54,7 +54,7 @@ interface IDataSource {
 export class InvestTableComponent {
   items$ = input.required<IDataSource[]>({ alias: 'items' });
 
-  selectItem = output<IDataSource['shortName']>();
+  selectItem = output<IDataSource['ticker']>();
 
   protected readonly displayedColumns: string[] = ['name', 'price', 'absolutePrice', 'chart'];
   protected readonly negativeChartValue: readonly TuiPoint[] = [
@@ -76,7 +76,7 @@ export class InvestTableComponent {
     [350, 90],
   ];
 
-  onSelect(ticker: IDataSource['shortName']): void {
+  onSelect(ticker: IDataSource['ticker']): void {
     this.selectItem.emit(ticker);
   }
 }

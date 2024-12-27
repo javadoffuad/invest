@@ -8,5 +8,5 @@ export const selectCurrencies = createSelector(selectFeature, (state) => state.c
 export const selectCurrencyByTicker = (ticker: string) =>
   createSelector(
     selectFeature,
-    (state) => state.currencies.find((item) => item.shortName === ticker) ?? null,
+    (state) => state.currencies.find((item) => item.ticker === ticker) ?? null,
   );

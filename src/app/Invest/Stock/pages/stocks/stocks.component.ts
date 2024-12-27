@@ -36,7 +36,7 @@ export class StocksComponent implements OnInit {
     this.featureStocksService.getStocks();
   }
 
-  protected openStock(ticker: IStock['shortName']): void {
+  protected openStock(ticker: IStock['ticker']): void {
     this.router.navigate([`/${PAGE_STOCKS}/` + ticker]);
   }
 }

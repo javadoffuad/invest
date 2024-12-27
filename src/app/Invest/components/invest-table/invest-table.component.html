@@ -11,14 +11,14 @@
   </thead>
   <tbody tuiTbody [data]="items">
     @for (item of items; track $index) {
-      <tr (click)="onSelect(item.shortName)" class="stock__tr" tuiTr>
+      <tr (click)="onSelect(item.ticker)" class="stock__tr" tuiTr>
         <td *tuiCell="'name'" tuiTd>
           <div class="stock__icon-badge">
             <tui-avatar [src]="item.logoName | tuiIcon" size="m" />
 
             <span tuiTitle class="stock__name">
               {{ item.name }}
-              <span tuiSubtitle>{{ item.shortName }}</span>
+              <span tuiSubtitle>{{ item.ticker }}</span>
             </span>
           </div>
         </td>

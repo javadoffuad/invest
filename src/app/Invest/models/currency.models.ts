@@ -5,7 +5,7 @@ export interface ICurrency {
   name: string;
   currency: string;
   symbolType: string;
-  shortName: string;
+  ticker: string;
   logoName: string;
   isin: string;
   isFavorite: boolean;

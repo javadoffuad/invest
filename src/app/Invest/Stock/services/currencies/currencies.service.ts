@@ -10,7 +10,7 @@ export class CurrenciesService {
     {
       id: 1,
       name: 'Доллар США',
-      shortName: 'USDRUB',
+      ticker: 'USDRUB',
       symbolType: 'Currency',
       isin: 'USD000UTSTOM',
       isFavorite: false,
@@ -39,7 +39,7 @@ export class CurrenciesService {
     {
       id: 2,
       name: 'Евро',
-      shortName: 'EURRUB',
+      ticker: 'EURRUB',
       symbolType: 'Currency',
       isin: 'USD000UTSTOM',
       isFavorite: false,
@@ -68,7 +68,7 @@ export class CurrenciesService {
     {
       id: 3,
       name: 'Фунт стерлингов',
-      shortName: 'GBPRUB',
+      ticker: 'GBPRUB',
       symbolType: 'Currency',
       isin: 'GBPRUB_TOM',
       isFavorite: false,
@@ -97,7 +97,7 @@ export class CurrenciesService {
     {
       id: 4,
       name: 'Швейцарский франк',
-      shortName: 'CHFRUB',
+      ticker: 'CHFRUB',
       symbolType: 'Currency',
       isin: 'CHFRUB_TOM',
       isFavorite: false,
@@ -131,7 +131,7 @@ export class CurrenciesService {
     return of(this.items);
   }
 
-  public getItem(shortName: ICurrency['shortName']): ICurrency | null {
-    return this.items.find((stock) => stock.shortName === shortName) || null;
+  public getItem(shortName: ICurrency['ticker']): ICurrency | null {
+    return this.items.find((stock) => stock.ticker === shortName) || null;
   }
 }

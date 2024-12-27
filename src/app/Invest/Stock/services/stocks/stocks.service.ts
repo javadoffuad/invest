@@ -10,7 +10,7 @@ export class StocksService {
     {
       id: 1,
       name: 'Норильский никель',
-      shortName: 'GMKN',
+      ticker: 'GMKN',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/nornikelx160.png',
       isin: 'RU0007288411',
       isFavorite: false,
@@ -40,7 +40,7 @@ export class StocksService {
     {
       id: 2,
       name: 'Мечел',
-      shortName: 'MTLR',
+      ticker: 'MTLR',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0DKXV5x160.png',
       isin: 'RU000A0DKXV5',
       isFavorite: false,
@@ -70,7 +70,7 @@ export class StocksService {
     {
       id: 3,
       name: 'НЛМК',
-      shortName: 'NLMK',
+      ticker: 'NLMK',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009046452x160.png',
       isin: 'RU0009046452',
       isFavorite: true,
@@ -100,7 +100,7 @@ export class StocksService {
     {
       id: 4,
       name: 'ГК Самолет',
-      shortName: 'SMLT',
+      ticker: 'SMLT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A102RX6x160.png',
       isin: 'RU000A0ZZG02',
       isFavorite: false,
@@ -130,7 +130,7 @@ export class StocksService {
     {
       id: 5,
       name: 'Хэдхантер',
-      shortName: 'HEAD',
+      ticker: 'HEAD',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/US42207L1061x160.png',
       isin: 'RU000A107662',
       isFavorite: false,
@@ -160,7 +160,7 @@ export class StocksService {
     {
       id: 6,
       name: 'Магнит',
-      shortName: 'MGNT',
+      ticker: 'MGNT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JKQU8x160.png',
       isin: 'RU000A0JKQU8',
       isFavorite: false,
@@ -190,7 +190,7 @@ export class StocksService {
     {
       id: 7,
       name: 'Московская Биржа',
-      shortName: 'MOEX',
+      ticker: 'MOEX',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU000A0JR4A1x160.png',
       isin: 'RU000A0JR4A1',
       isFavorite: false,
@@ -220,7 +220,7 @@ export class StocksService {
     {
       id: 8,
       name: 'Сургутнефтегаз',
-      shortName: 'SNGS',
+      ticker: 'SNGS',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0008926258x160.png',
       isin: 'RU0008926258',
       isFavorite: false,
@@ -250,7 +250,7 @@ export class StocksService {
     {
       id: 9,
       name: 'ММК',
-      shortName: 'MAGN',
+      ticker: 'MAGN',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009084396x160.png',
       isin: 'RU0009084396',
       isFavorite: false,
@@ -280,7 +280,7 @@ export class StocksService {
     {
       id: 10,
       name: 'Аэрофлот',
-      shortName: 'AFLT',
+      ticker: 'AFLT',
       logoName: 'https://invest-brands.cdn-tinkoff.ru/RU0009062285x160.png',
       isin: 'RU0009062285',
       isFavorite: false,
@@ -315,8 +315,8 @@ export class StocksService {
     return of(this.stocks);
   }
 
-  public getStock(stockShortName: IStock['shortName']): IStock | null {
-    return this.stocks.find((stock) => stock.shortName === stockShortName) || null;
+  public getStock(stockShortName: IStock['ticker']): IStock | null {
+    return this.stocks.find((stock) => stock.ticker === stockShortName) || null;
   }
 
   public setStock(stock: IStock): void {

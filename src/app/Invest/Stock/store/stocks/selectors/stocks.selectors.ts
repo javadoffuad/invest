@@ -8,5 +8,5 @@ export const selectStocks = createSelector(selectFeature, (state) => state.stock
 export const selectStockByTicker = (ticker: string) =>
   createSelector(
     selectFeature,
-    (state) => state.stocks.find((stock) => stock.shortName === ticker) ?? null,
+    (state) => state.stocks.find((stock) => stock.ticker === ticker) ?? null,
   );
