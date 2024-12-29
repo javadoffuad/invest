@@ -1,4 +1,4 @@
-import { Component, inject, signal, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, Signal } from '@angular/core';
 import { IStock } from '../../../../../models/stock.models';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
 import { CompaniesService } from '../../../../../services/companies/companies.service';
@@ -11,6 +11,7 @@ import { TuiAvatar } from '@taiga-ui/kit';
   imports: [TuiTitle, TuiAvatar],
   templateUrl: './stock-review.component.html',
   styleUrl: './stock-review.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StockReviewComponent {
   protected stock$ = inject<Signal<IStock>>(ROUTER_OUTLET_DATA);
