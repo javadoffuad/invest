@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
 import { InvestTableComponent } from '../../components/invest-table/invest-table.component';
 import { FeatureCurrenciesService } from '../../Stock/pages/stocks/services/feature-currencies/feature-currencies.service';
@@ -12,6 +12,7 @@ import { PAGE_CURRENCIES } from '../../constants/invest.constants';
   templateUrl: './currencies.component.html',
   styleUrl: './currencies.component.less',
   providers: [FeatureCurrenciesService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrenciesComponent {
   protected currencies$: Signal<ICurrency[]>;
