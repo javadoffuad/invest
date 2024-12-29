@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/cor
 import { ROUTER_OUTLET_DATA } from '@angular/router';
 import { TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar } from '@taiga-ui/kit';
-import { ICurrency } from '../../../models/currency.models';
+import { ICurrency } from '../../../../../models/currency.models';
 
 @Component({
   selector: 'app-currency-review',

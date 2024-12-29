@@ -4,7 +4,7 @@ import { ISector, IStock } from '../../../models/stock.models';
 import { SectorsService } from '../../../services/sectors/sectors.service';
 import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolbar.component';
 import { InvestTableComponent } from '../../../components/invest-table/invest-table.component';
-import { FeatureStocksService } from './services/feature-stocks/feature-stocks.service';
+import { FeatureStocksService } from '../../services/feature-stocks/feature-stocks.service';
 import { Router } from '@angular/router';
 import { PAGE_STOCKS } from '../../../constants/invest.constants';
 

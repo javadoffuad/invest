@@ -15,8 +15,8 @@ import {
 import {
   currenciesReducer,
   STORE_KEY_CURRENCIES,
-} from './Stock/store/currencies/reducers/currencies.reducers';
-import { CurrenciesEffects } from './Stock/store/currencies/effects/currencies.effects';
+} from './Currency/store/currencies/reducers/currencies.reducers';
+import { CurrenciesEffects } from './Currency/store/currencies/effects/currencies.effects';
 
 /**
  * recommendations
@@ -61,7 +61,9 @@ export const investRoutes: Routes = [
         ],
         matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
         loadComponent: () =>
-          import('./currencies/currencies/currencies.component').then((c) => c.CurrenciesComponent),
+          import('./Currency/pages/currencies/currencies.component').then(
+            (c) => c.CurrenciesComponent,
+          ),
       },
       {
         matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
@@ -110,28 +112,30 @@ export const investRoutes: Routes = [
   {
     path: `${PAGE_CURRENCIES}/:${PAGE_CURRENCIES_PARAM}`,
     loadComponent: () =>
-      import('./currency-detail/currency-detail.component').then((c) => c.CurrencyDetailComponent),
+      import('./Currency/pages/currency-detail/currency-detail.component').then(
+        (c) => c.CurrencyDetailComponent,
+      ),
     children: [
       {
         path: '',
         loadComponent: () =>
-          import('./currency-detail/components/currency-review/currency-review.component').then(
-            (c) => c.CurrencyReviewComponent,
-          ),
+          import(
+            './Currency/pages/currency-detail/components/currency-review/currency-review.component'
+          ).then((c) => c.CurrencyReviewComponent),
       },
       {
         path: 'pulse',
         loadComponent: () =>
-          import('./currency-detail/components/currency-pulse/currency-pulse.component').then(
-            (c) => c.CurrencyPulseComponent,
-          ),
+          import(
+            './Currency/pages/currency-detail/components/currency-pulse/currency-pulse.component'
+          ).then((c) => c.CurrencyPulseComponent),
       },
       {
         path: 'news',
         loadComponent: () =>
-          import('./currency-detail/components/currency-news/currency-news.component').then(
-            (c) => c.CurrencyNewsComponent,
-          ),
+          import(
+            './Currency/pages/currency-detail/components/currency-news/currency-news.component'
+          ).then((c) => c.CurrencyNewsComponent),
       },
     ],
   },

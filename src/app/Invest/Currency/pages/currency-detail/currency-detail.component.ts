@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { TuiTab, TuiTabsHorizontal } from '@taiga-ui/kit';
-import { ICurrency } from '../models/currency.models';
-import { PriceCardComponent } from '../components/price-card/price-card.component';
+import { ICurrency } from '../../../models/currency.models';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
-import { PAGE_CURRENCIES, PAGE_CURRENCIES_PARAM } from '../constants/invest.constants';
-import { FeatureCurrenciesService } from '../Stock/pages/stocks/services/feature-currencies/feature-currencies.service';
+import { PAGE_CURRENCIES, PAGE_CURRENCIES_PARAM } from '../../../constants/invest.constants';
+import { FeatureCurrenciesService } from '../../services/feature-currencies/feature-currencies.service';
+import { PriceCardComponent } from '../../../components/price-card/price-card.component';
 
 @Component({
   selector: 'app-currency-detail',

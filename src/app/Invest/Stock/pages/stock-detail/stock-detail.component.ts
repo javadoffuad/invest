@@ -6,7 +6,7 @@ import { SectorsService } from '../../../services/sectors/sectors.service';
 import { StockCardComponent } from './components/stock-card/stock-card.component';
 import { PriceCardComponent } from './components/price-card/price-card.component';
 import { PAGE_STOCKS, PAGE_STOCKS_PARAM } from '../../../constants/invest.constants';
-import { FeatureStocksService } from '../stocks/services/feature-stocks/feature-stocks.service';
+import { FeatureStocksService } from '../../services/feature-stocks/feature-stocks.service';
 
 @Component({
   selector: 'app-stock-detail',

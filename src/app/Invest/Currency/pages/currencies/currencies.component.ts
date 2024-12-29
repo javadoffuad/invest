@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
-import { InvestTableComponent } from '../../components/invest-table/invest-table.component';
-import { FeatureCurrenciesService } from '../../Stock/pages/stocks/services/feature-currencies/feature-currencies.service';
-import { ICurrency } from '../../models/currency.models';
+import { InvestTableComponent } from '../../../components/invest-table/invest-table.component';
+import { FeatureCurrenciesService } from '../../services/feature-currencies/feature-currencies.service';
+import { ICurrency } from '../../../models/currency.models';
 import { Router } from '@angular/router';
-import { PAGE_CURRENCIES } from '../../constants/invest.constants';
+import { PAGE_CURRENCIES } from '../../../constants/invest.constants';
 
 @Component({
   selector: 'app-currencies',
