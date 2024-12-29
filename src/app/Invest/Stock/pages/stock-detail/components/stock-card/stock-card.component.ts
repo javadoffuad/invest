@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { TuiAppearance, TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar, TuiLike } from '@taiga-ui/kit';
 import { TuiCardLarge } from '@taiga-ui/layout';
@@ -9,6 +9,7 @@ import { ISector, IStock } from '../../../../../models/stock.models';
   imports: [TuiAppearance, TuiAvatar, TuiCardLarge, TuiLike, TuiTitle],
   templateUrl: './stock-card.component.html',
   styleUrl: './stock-card.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StockCardComponent {
   public stock = input.required<IStock>();

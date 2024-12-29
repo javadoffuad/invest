@@ -1,4 +1,4 @@
-import { Component, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
 import { TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar } from '@taiga-ui/kit';
@@ -9,6 +9,7 @@ import { ICurrency } from '../../../models/currency.models';
   imports: [TuiTitle, TuiAvatar],
   templateUrl: './currency-review.component.html',
   styleUrl: './currency-review.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrencyReviewComponent {
   protected currency$ = inject<Signal<ICurrency>>(ROUTER_OUTLET_DATA);

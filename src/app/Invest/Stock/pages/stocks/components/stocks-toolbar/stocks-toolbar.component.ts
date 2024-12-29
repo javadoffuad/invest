@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { TuiSelectModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ISector } from '../../../../../models/stock.models';
@@ -8,6 +8,7 @@ import { ISector } from '../../../../../models/stock.models';
   imports: [TuiSelectModule, ReactiveFormsModule, TuiTextfieldControllerModule],
   templateUrl: './stocks-toolbar.component.html',
   styleUrl: './stocks-toolbar.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StocksToolbarComponent {
   countries = input.required<string[]>();

@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { TuiAppearance, TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar, TuiLike } from '@taiga-ui/kit';
 import { TuiCardLarge } from '@taiga-ui/layout';
@@ -8,6 +8,7 @@ import { TuiCardLarge } from '@taiga-ui/layout';
   imports: [TuiAppearance, TuiAvatar, TuiCardLarge, TuiLike, TuiTitle],
   templateUrl: './currency-card.component.html',
   styleUrl: './currency-card.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrencyCardComponent {
   brandName = input.required<string>();

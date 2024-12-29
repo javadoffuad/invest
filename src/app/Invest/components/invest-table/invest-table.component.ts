@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { TuiAvatar } from '@taiga-ui/kit';
 import { TuiAxes, TuiLineChart } from '@taiga-ui/addon-charts';
@@ -50,6 +50,7 @@ interface IDataSource {
   ],
   templateUrl: './invest-table.component.html',
   styleUrl: './invest-table.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InvestTableComponent {
   items$ = input.required<IDataSource[]>({ alias: 'items' });

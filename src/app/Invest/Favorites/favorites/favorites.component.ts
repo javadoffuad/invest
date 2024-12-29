@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
 
 @Component({
@@ -6,5 +6,6 @@ import { TuiTitle } from '@taiga-ui/core';
   imports: [TuiTitle],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FavoritesComponent {}

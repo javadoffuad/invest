@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TuiButton, TuiTitle } from '@taiga-ui/core';
 
 @Component({
@@ -6,5 +6,6 @@ import { TuiButton, TuiTitle } from '@taiga-ui/core';
   imports: [TuiTitle, TuiButton],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {}

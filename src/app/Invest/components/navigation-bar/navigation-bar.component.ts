@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TuiButton } from '@taiga-ui/core';
 
@@ -7,5 +7,6 @@ import { TuiButton } from '@taiga-ui/core';
   imports: [RouterLink, TuiButton, RouterLinkActive],
   templateUrl: './navigation-bar.component.html',
   styleUrl: './navigation-bar.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationBarComponent {}

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { TuiAppearance, TuiButton, TuiFormatNumberPipe, TuiLink, TuiTitle } from '@taiga-ui/core';
 import { TuiCardLarge } from '@taiga-ui/layout';
@@ -22,6 +22,7 @@ import { RouterLink } from '@angular/router';
   ],
   templateUrl: './price-card.component.html',
   styleUrl: './price-card.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PriceCardComponent {
   public price = input.required<IPrice>();

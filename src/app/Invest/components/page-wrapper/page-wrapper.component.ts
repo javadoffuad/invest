@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
@@ -15,6 +15,7 @@ import { TuiInputModule, TuiTextfieldControllerModule } from '@taiga-ui/legacy';
   ],
   templateUrl: './page-wrapper.component.html',
   styleUrl: './page-wrapper.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageWrapperComponent {
   protected control = new FormControl<string>('');
