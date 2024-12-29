@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { StocksActions } from '../actions/stocks.actions';
 import { catchError, EMPTY, exhaustMap, map } from 'rxjs';
-import { StocksService } from '../../../services/stocks/stocks.service';
+import { StocksService } from '../../../../services/stocks/stocks.service';
 
 @Injectable()
 export class StocksEffects {

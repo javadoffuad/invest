@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, Signal, signal } from '@angular/core';
 import { TuiTitle } from '@taiga-ui/core';
 import { ISector, IStock } from '../../../models/stock.models';
-import { SectorsService } from '../../services/sectors/sectors.service';
+import { SectorsService } from '../../../services/sectors/sectors.service';
 import { StocksToolbarComponent } from './components/stocks-toolbar/stocks-toolbar.component';
 import { InvestTableComponent } from '../../../components/invest-table/invest-table.component';
 import { FeatureStocksService } from './services/feature-stocks/feature-stocks.service';

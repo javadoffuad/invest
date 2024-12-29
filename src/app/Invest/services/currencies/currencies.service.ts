@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ICurrency } from '../../../models/currency.models';
+import { ICurrency } from '../../models/currency.models';
 
 @Injectable({
   providedIn: 'root',

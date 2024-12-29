@@ -1,8 +1,8 @@
 import { Component, inject, signal, Signal } from '@angular/core';
 import { IStock } from '../../../../../models/stock.models';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
-import { CompaniesService } from '../../../../services/companies/companies.service';
-import { ICompany } from '../../../../models/company.models';
+import { CompaniesService } from '../../../../../services/companies/companies.service';
+import { ICompany } from '../../../../../models/company.models';
 import { TuiTitle } from '@taiga-ui/core';
 import { TuiAvatar } from '@taiga-ui/kit';
 
