@@ -5,7 +5,7 @@ import * as Selectors from '../../store/dictionaries/selectors/dictionaries.sele
 import { ICountry } from '../../models/country.models';
 
 @Injectable()
-export class FeatureCountriesService {
+export class FeatureDictionariesService {
   constructor(private store: Store) {}
 
   public getCountries(): void {

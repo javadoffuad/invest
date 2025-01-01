@@ -7,6 +7,7 @@ import { InvestTableComponent } from '../../../components/invest-table/invest-ta
 import { FeatureStocksService } from '../../services/feature-stocks/feature-stocks.service';
 import { Router } from '@angular/router';
 import { PAGE_STOCKS } from '../../../constants/invest.constants';
+import { FeatureDictionariesService } from '../../../services/feature-dictionaries/feature-dictionaries.service';
 
 @Component({
   selector: 'app-stocks',
@@ -14,7 +15,7 @@ import { PAGE_STOCKS } from '../../../constants/invest.constants';
   templateUrl: './stocks.component.html',
   styleUrl: './stocks.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FeatureStocksService],
+  providers: [FeatureStocksService, FeatureDictionariesService],
 })
 export class StocksComponent implements OnInit {
   protected sectors = signal<ISector[]>([]);

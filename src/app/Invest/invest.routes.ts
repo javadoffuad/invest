@@ -17,6 +17,11 @@ import {
   STORE_KEY_CURRENCIES,
 } from './Currency/store/currencies/reducers/currencies.reducers';
 import { CurrenciesEffects } from './Currency/store/currencies/effects/currencies.effects';
+import { DictionariesEffects } from './store/dictionaries/effects/dictionaries.effects';
+import {
+  dictionariesReducer,
+  STORE_KEY_DICTIONARIES,
+} from './store/dictionaries/reducers/dictionaries.reducers';
 
 /**
  * recommendations
@@ -33,6 +38,10 @@ import { CurrenciesEffects } from './Currency/store/currencies/effects/currencie
 export const investRoutes: Routes = [
   {
     matcher: matchInvestPage,
+    providers: [
+      provideEffects(DictionariesEffects),
+      provideState({ name: STORE_KEY_DICTIONARIES, reducer: dictionariesReducer }),
+    ],
     loadComponent: () =>
       import('./components/page-wrapper/page-wrapper.component').then(
         (c) => c.PageWrapperComponent,
