@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ICountry } from '../../models/country.models';
+import { map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountriesService {
-  private readonly items: ICountry[] = [
+  private readonly items = of<ICountry[]>([
     {
       id: 1,
       name: 'Россия',
@@ -46,15 +47,15 @@ export class CountriesService {
       id: 10,
       name: 'Япония',
     },
-  ];
+  ]);
 
   constructor() {}
 
-  public getItems(): ICountry[] {
+  public getItems(): Observable<ICountry[]> {
     return this.items;
   }
 
-  public getItemById(sectorId: ICountry['id']): ICountry | null {
-    return this.items.find((item) => item.id === sectorId) || null;
+  public getItemById(itemId: ICountry['id']): Observable<ICountry | null> {
+    return this.items.pipe(map((items) => items.find((item) => item.id === itemId) || null));
   }
 }
