@@ -8,7 +8,7 @@ import { StocksService } from '../../../../services/stocks/stocks.service';
 export class StocksEffects {
   private actions$ = inject(Actions);
 
-  loadMovies$ = createEffect(() =>
+  loadStocks$ = createEffect(() =>
     this.actions$.pipe(
       ofType(StocksActions.loadStocks),
       exhaustMap(() =>
