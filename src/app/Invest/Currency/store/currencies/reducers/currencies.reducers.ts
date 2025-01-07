@@ -44,4 +44,17 @@ export const currenciesReducer = createReducer(
       currencies: newCurrencies,
     };
   }),
+  on(CurrenciesActions.loadCurrencyByTicker, (state) => ({
+    ...state,
+    isLoadingCurrencies: true,
+  })),
+  on(CurrenciesActions.loadCurrencyByTickerSuccess, (state, { item }) => {
+    const newCurrencies = [...state.currencies];
+    newCurrencies.splice(newCurrencies.indexOf(item), 1, item);
+    return {
+      ...state,
+      currencies: newCurrencies,
+      isLoadingCurrencies: false,
+    };
+  }),
 );

@@ -3,7 +3,6 @@ import { provideEffects } from '@ngrx/effects';
 import { StocksEffects } from './Stock/store/stocks/effects/stocks.effects';
 import { provideState } from '@ngrx/store';
 import { stocksReducer, STORE_KEY_STOCKS } from './Stock/store/stocks/reducers/stocks.reducers';
-import { matchInvestPage, matchInvestSubPage } from './utils/routes.utils';
 import {
   PAGE_CURRENCIES,
   PAGE_CURRENCIES_PARAM,
@@ -22,6 +21,8 @@ import {
   dictionariesReducer,
   STORE_KEY_DICTIONARIES,
 } from './store/dictionaries/reducers/dictionaries.reducers';
+import { FeatureCurrenciesService } from './Currency/services/feature-currencies/feature-currencies.service';
+import { FeatureStocksService } from './Stock/services/feature-stocks/feature-stocks.service';
 
 /**
  * recommendations
@@ -37,7 +38,8 @@ import {
 
 export const investRoutes: Routes = [
   {
-    matcher: matchInvestPage,
+    // matcher: matchInvestPage,
+    path: '',
     providers: [
       provideEffects(DictionariesEffects),
       provideState({ name: STORE_KEY_DICTIONARIES, reducer: dictionariesReducer }),
@@ -48,103 +50,127 @@ export const investRoutes: Routes = [
       ),
     children: [
       {
-        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_RECOMMENDATIONS),
+        path: PAGE_RECOMMENDATIONS,
+        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_RECOMMENDATIONS),
         loadComponent: () =>
           import('./Recommendations/recommendations/recommendations.component').then(
             (c) => c.RecommendationsComponent,
           ),
       },
       {
-        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_STOCKS),
+        path: PAGE_FAVORITES,
+        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
+        loadComponent: () =>
+          import('./Favorites/favorites/favorites.component').then((c) => c.FavoritesComponent),
+      },
+      {
+        path: PAGE_STOCKS,
+        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_STOCKS),
         providers: [
+          FeatureStocksService,
           provideEffects(StocksEffects),
           provideState({ name: STORE_KEY_STOCKS, reducer: stocksReducer }),
         ],
         loadComponent: () =>
-          import('./Stock/pages/stocks/stocks.component').then((c) => c.StocksComponent),
+          import('./Stock/pages/stock-wrapper/stock-wrapper.component').then(
+            (c) => c.StockWrapperComponent,
+          ),
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./Stock/pages/stocks/stocks.component').then((c) => c.StocksComponent),
+          },
+          {
+            path: `:${PAGE_STOCKS_PARAM}`,
+            loadComponent: () =>
+              import('./Stock/pages/stock-detail/stock-detail.component').then(
+                (c) => c.StockDetailComponent,
+              ),
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import(
+                    './Stock/pages/stock-detail/components/stock-review/stock-review.component'
+                  ).then((c) => c.StockReviewComponent),
+              },
+              {
+                path: 'pulse',
+                loadComponent: () =>
+                  import(
+                    './Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component'
+                  ).then((c) => c.StockPulseComponent),
+              },
+              {
+                path: 'dividends',
+                loadComponent: () =>
+                  import(
+                    './Stock/pages/stock-detail/components/stock-dividends/stock-dividends.component'
+                  ).then((c) => c.StockDividendsComponent),
+              },
+              {
+                path: 'news',
+                loadComponent: () =>
+                  import(
+                    './Stock/pages/stock-detail/components/stock-news/stock-news.component'
+                  ).then((c) => c.StockNewsComponent),
+              },
+            ],
+          },
+        ],
       },
       {
         providers: [
+          FeatureCurrenciesService,
           provideEffects(CurrenciesEffects),
           provideState({ name: STORE_KEY_CURRENCIES, reducer: currenciesReducer }),
         ],
-        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
+        path: PAGE_CURRENCIES,
+        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
         loadComponent: () =>
-          import('./Currency/pages/currencies/currencies.component').then(
-            (c) => c.CurrenciesComponent,
+          import('./Stock/pages/stock-wrapper/stock-wrapper.component').then(
+            (c) => c.StockWrapperComponent,
           ),
-      },
-      {
-        matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
-        loadComponent: () =>
-          import('./Favorites/favorites/favorites.component').then((c) => c.FavoritesComponent),
-      },
-    ],
-  },
-  {
-    path: `${PAGE_STOCKS}/:${PAGE_STOCKS_PARAM}`,
-    loadComponent: () =>
-      import('./Stock/pages/stock-detail/stock-detail.component').then(
-        (c) => c.StockDetailComponent,
-      ),
-    children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-review/stock-review.component').then(
-            (c) => c.StockReviewComponent,
-          ),
-      },
-      {
-        path: 'pulse',
-        loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-pulse/stock-pulse.component').then(
-            (c) => c.StockPulseComponent,
-          ),
-      },
-      {
-        path: 'dividends',
-        loadComponent: () =>
-          import(
-            './Stock/pages/stock-detail/components/stock-dividends/stock-dividends.component'
-          ).then((c) => c.StockDividendsComponent),
-      },
-      {
-        path: 'news',
-        loadComponent: () =>
-          import('./Stock/pages/stock-detail/components/stock-news/stock-news.component').then(
-            (c) => c.StockNewsComponent,
-          ),
-      },
-    ],
-  },
-  {
-    path: `${PAGE_CURRENCIES}/:${PAGE_CURRENCIES_PARAM}`,
-    loadComponent: () =>
-      import('./Currency/pages/currency-detail/currency-detail.component').then(
-        (c) => c.CurrencyDetailComponent,
-      ),
-    children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import(
-            './Currency/pages/currency-detail/components/currency-review/currency-review.component'
-          ).then((c) => c.CurrencyReviewComponent),
-      },
-      {
-        path: 'pulse',
-        loadComponent: () =>
-          import(
-            './Currency/pages/currency-detail/components/currency-pulse/currency-pulse.component'
-          ).then((c) => c.CurrencyPulseComponent),
-      },
-      {
-        path: 'news',
-        loadComponent: () =>
-          import(
-            './Currency/pages/currency-detail/components/currency-news/currency-news.component'
-          ).then((c) => c.CurrencyNewsComponent),
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./Currency/pages/currencies/currencies.component').then(
+                (c) => c.CurrenciesComponent,
+              ),
+          },
+          {
+            path: `:${PAGE_CURRENCIES_PARAM}`,
+            loadComponent: () =>
+              import('./Currency/pages/currency-detail/currency-detail.component').then(
+                (c) => c.CurrencyDetailComponent,
+              ),
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import(
+                    './Currency/pages/currency-detail/components/currency-review/currency-review.component'
+                  ).then((c) => c.CurrencyReviewComponent),
+              },
+              {
+                path: 'pulse',
+                loadComponent: () =>
+                  import(
+                    './Currency/pages/currency-detail/components/currency-pulse/currency-pulse.component'
+                  ).then((c) => c.CurrencyPulseComponent),
+              },
+              {
+                path: 'news',
+                loadComponent: () =>
+                  import(
+                    './Currency/pages/currency-detail/components/currency-news/currency-news.component'
+                  ).then((c) => c.CurrencyNewsComponent),
+              },
+            ],
+          },
+        ],
       },
     ],
   },

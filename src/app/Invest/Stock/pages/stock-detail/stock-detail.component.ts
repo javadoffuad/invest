@@ -21,7 +21,6 @@ import { FeatureStocksService } from '../../services/feature-stocks/feature-stoc
   templateUrl: './stock-detail.component.html',
   styleUrl: './stock-detail.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FeatureStocksService],
 })
 export class StockDetailComponent implements OnInit {
   protected readonly stocksPage = PAGE_STOCKS;
@@ -37,6 +36,7 @@ export class StockDetailComponent implements OnInit {
 
   ngOnInit() {
     const ticker = this.route.snapshot.paramMap.get(PAGE_STOCKS_PARAM) ?? '';
+    this.featureStocksService.getStockByTicker(ticker);
     const stock = this.featureStocksService.selectStockByTicker(ticker)();
 
     if (stock) {

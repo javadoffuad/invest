@@ -11,7 +11,6 @@ import { PAGE_CURRENCIES } from '../../../constants/invest.constants';
   imports: [TuiTitle, InvestTableComponent],
   templateUrl: './currencies.component.html',
   styleUrl: './currencies.component.less',
-  providers: [FeatureCurrenciesService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrenciesComponent {

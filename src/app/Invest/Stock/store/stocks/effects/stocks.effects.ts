@@ -20,5 +20,22 @@ export class StocksEffects {
     ),
   );
 
+  loadStockByTicker$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(StocksActions.loadStockByTicker),
+      exhaustMap(({ ticker }) =>
+        this.stocksService.getStock(ticker).pipe(
+          map((stock) => {
+            if (stock) {
+              return StocksActions.loadStockByTickerSuccess({ stock });
+            }
+            throw new Error(`Stock with ticker ${ticker} not found`);
+          }),
+          catchError(() => EMPTY),
+        ),
+      ),
+    ),
+  );
+
   constructor(private stocksService: StocksService) {}
 }

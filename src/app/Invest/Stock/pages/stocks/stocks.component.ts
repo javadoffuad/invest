@@ -16,7 +16,7 @@ import { ICountry } from '../../../models/country.models';
   templateUrl: './stocks.component.html',
   styleUrl: './stocks.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FeatureStocksService, FeatureDictionariesService],
+  providers: [FeatureDictionariesService],
 })
 export class StocksComponent implements OnInit {
   protected sectors = signal<ISector[]>([]);

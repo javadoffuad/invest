@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { ICurrency } from '../../models/currency.models';
 
 @Injectable({
@@ -131,7 +131,9 @@ export class CurrenciesService {
     return of(this.items);
   }
 
-  public getItem(shortName: ICurrency['ticker']): ICurrency | null {
-    return this.items.find((stock) => stock.ticker === shortName) || null;
+  public getItem(ticker: ICurrency['ticker']): Observable<ICurrency | null> {
+    return this.getItems().pipe(
+      map((items) => items.find((item) => item.ticker === ticker) || null),
+    );
   }
 }

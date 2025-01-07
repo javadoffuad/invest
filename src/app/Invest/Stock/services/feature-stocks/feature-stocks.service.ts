@@ -12,6 +12,10 @@ export class FeatureStocksService {
     this.store.dispatch(StocksActions.loadStocks());
   }
 
+  public getStockByTicker(ticker: IStock['ticker']): void {
+    this.store.dispatch(StocksActions.loadStockByTicker({ ticker }));
+  }
+
   public setStock(stock: IStock): void {
     this.store.dispatch(StocksActions.setStock({ stock }));
   }

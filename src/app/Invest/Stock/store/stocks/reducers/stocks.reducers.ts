@@ -27,10 +27,19 @@ export const stocksReducer = createReducer(
     stocks,
     isLoadingStocks: false,
   })),
-  on(StocksActions.loadStocksSuccess, (state) => ({
+  on(StocksActions.loadStockByTicker, (state) => ({
     ...state,
-    isLoadingStocks: false,
+    isLoadingStocks: true,
   })),
+  on(StocksActions.loadStockByTickerSuccess, (state, { stock }) => {
+    const newStocks = [...state.stocks];
+    newStocks.splice(newStocks.indexOf(stock), 1, stock);
+    return {
+      ...state,
+      stocks: newStocks,
+      isLoadingStocks: false,
+    };
+  }),
   on(StocksActions.selectStock, (state, action) => ({
     ...state,
     activeStockId: action.stockId,

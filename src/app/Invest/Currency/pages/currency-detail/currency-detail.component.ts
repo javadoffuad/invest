@@ -33,6 +33,8 @@ export class CurrencyDetailComponent implements OnInit {
 
   ngOnInit() {
     const ticker = this.route.snapshot.paramMap.get(PAGE_CURRENCIES_PARAM) ?? '';
+    this.featureCurrenciesService.getCurrencyByTicker(ticker);
+
     const currency = this.featureCurrenciesService.selectCurrencyByTicker(ticker);
     this.currency.set(currency());
   }

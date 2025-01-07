@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { IStock } from '../../models/stock.models';
 
 @Injectable({
@@ -315,8 +315,10 @@ export class StocksService {
     return of(this.stocks);
   }
 
-  public getStock(stockShortName: IStock['ticker']): IStock | null {
-    return this.stocks.find((stock) => stock.ticker === stockShortName) || null;
+  public getStock(ticker: IStock['ticker']): Observable<IStock | null> {
+    return this.getStocks().pipe(
+      map((stocks) => stocks.find((stock) => stock.ticker === ticker) || null),
+    );
   }
 
   public setStock(stock: IStock): void {

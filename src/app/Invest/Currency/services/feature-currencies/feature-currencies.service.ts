@@ -12,6 +12,10 @@ export class FeatureCurrenciesService {
     this.store.dispatch(CurrenciesActions.loadCurrencies());
   }
 
+  public getCurrencyByTicker(ticker: ICurrency['ticker']): void {
+    this.store.dispatch(CurrenciesActions.loadCurrencyByTicker({ ticker }));
+  }
+
   public setCurrency(currency: ICurrency): void {
     this.store.dispatch(CurrenciesActions.setCurrency({ item: currency }));
   }

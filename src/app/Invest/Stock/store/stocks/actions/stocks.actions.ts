@@ -8,6 +8,10 @@ export const StocksActions = createActionGroup({
     'Load Stocks Success': props<{ stocks: IStock[] }>(),
     'Load Stocks Failure': emptyProps(),
 
+    'Load Stock By Ticker': props<{ ticker: IStock['ticker'] }>(),
+    'Load Stock By Ticker Success': props<{ stock: IStock }>(),
+    'Load Stock By Ticker Failure': emptyProps(),
+
     'Select Stock': props<{ stockId: IStock['id'] }>(),
 
     'Set Stock': props<{ stock: IStock }>(),
