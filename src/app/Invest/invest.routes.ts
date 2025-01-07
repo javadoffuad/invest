@@ -38,7 +38,6 @@ import { FeatureStocksService } from './Stock/services/feature-stocks/feature-st
 
 export const investRoutes: Routes = [
   {
-    // matcher: matchInvestPage,
     path: '',
     providers: [
       provideEffects(DictionariesEffects),
@@ -51,7 +50,6 @@ export const investRoutes: Routes = [
     children: [
       {
         path: PAGE_RECOMMENDATIONS,
-        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_RECOMMENDATIONS),
         loadComponent: () =>
           import('./Recommendations/recommendations/recommendations.component').then(
             (c) => c.RecommendationsComponent,
@@ -59,13 +57,11 @@ export const investRoutes: Routes = [
       },
       {
         path: PAGE_FAVORITES,
-        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_FAVORITES),
         loadComponent: () =>
           import('./Favorites/favorites/favorites.component').then((c) => c.FavoritesComponent),
       },
       {
         path: PAGE_STOCKS,
-        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_STOCKS),
         providers: [
           FeatureStocksService,
           provideEffects(StocksEffects),
@@ -127,7 +123,6 @@ export const investRoutes: Routes = [
           provideState({ name: STORE_KEY_CURRENCIES, reducer: currenciesReducer }),
         ],
         path: PAGE_CURRENCIES,
-        // matcher: (url, segment) => matchInvestSubPage(url, segment, PAGE_CURRENCIES),
         loadComponent: () =>
           import('./Stock/pages/stock-wrapper/stock-wrapper.component').then(
             (c) => c.StockWrapperComponent,
